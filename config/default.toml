@@ -1,0 +1,31 @@
+[project]
+seed = 42
+locale = "es"
+
+[paths]
+data_dir = "data"
+models_dir = "models"
+reports_dir = "reports"
+
+[features]
+rolling_window = 5
+elo_initial = 1500.0
+elo_k_factor = 30.0
+elo_home_advantage = 0.0
+max_score = 8
+
+[training]
+minimum_training_matches = 200
+evaluation_mode = "strict_editions"
+start_year = 1958
+keras_epochs = 50
+keras_batch_size = 32
+keras_patience = 8
+
+[sources]
+world_cup_matches_url = "https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/matches.csv"
+world_cup_goals_url = "https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/goals.csv"
+world_cup_teams_url = "https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/teams.csv"
+world_cup_tournaments_url = "https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/tournaments.csv"
+world_cup_2026_url = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
+fifa_rankings_url = "https://raw.githubusercontent.com/Dato-Futbol/fifa-ranking/master/ranking_fifa_historical.csv"

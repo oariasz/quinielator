@@ -1,0 +1,29 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Datos descargados, modelos y reportes regenerables
+data/raw/*.csv
+data/raw/*.json
+data/interim/*
+data/processed/*
+models/*
+reports/*
+
+# Se conservan las carpetas y los fixtures pequeños
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!reports/.gitkeep
+!reports/README.md
+
