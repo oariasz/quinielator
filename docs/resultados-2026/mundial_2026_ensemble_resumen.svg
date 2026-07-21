@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310"
-viewBox="0 0 1000 310">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="659"
+viewBox="0 0 1000 659">
 <rect width="100%" height="100%" rx="18" fill="#f8fafc"/>
 <text x="500" y="38" text-anchor="middle" font-family="system-ui" font-size="23"
 font-weight="700" fill="#172033">Mundial 2026 · signos 1/X/2 · ensemble</text>
@@ -17,9 +17,9 @@ font-weight="800" fill="#16a34a">45.2%</text>
 <text x="165" y="214" text-anchor="middle" font-family="system-ui" font-size="13"
 fill="#657084">accuracy de signo</text>
 <text x="385" y="190" text-anchor="middle" font-family="system-ui" font-size="29"
-font-weight="800" fill="#2563eb">11</text>
+font-weight="800" fill="#2563eb">10.6%</text>
 <text x="385" y="214" text-anchor="middle" font-family="system-ui" font-size="13"
-fill="#657084">marcadores exactos</text>
+fill="#657084">11/104 marcadores exactos</text>
 <text x="650" y="184" text-anchor="middle" font-family="system-ui" font-size="15"
 font-weight="700" fill="#172033">Signos reales</text>
 <text x="650" y="210" text-anchor="middle" font-family="system-ui" font-size="14"
@@ -28,6 +28,13 @@ fill="#657084">1: 52 · X: 29 · 2: 23</text>
 font-weight="700" fill="#172033">Signos predichos</text>
 <text x="850" y="210" text-anchor="middle" font-family="system-ui" font-size="14"
 fill="#657084">1: 30 · X: 31 · 2: 43</text>
-<text x="500" y="272" text-anchor="middle" font-family="system-ui" font-size="13"
+<text x="185" y="275" text-anchor="end" font-family="system-ui" font-size="15"
+font-weight="700" fill="#172033">Indicadores por fase</text>
+<text x="400" y="275" text-anchor="middle" font-family="system-ui" font-size="13"
+font-weight="700" fill="#16a34a">Signos acertados</text>
+<text x="745" y="275" text-anchor="middle" font-family="system-ui" font-size="13"
+font-weight="700" fill="#2563eb">Marcadores exactos</text>
+<text x="185" y="318" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Grupos</text><text x="230" y="318" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">72 pj.</text><rect x="285" y="300" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="300" width="105.4" height="24" rx="6" fill="#16a34a"/><text x="525" y="317" font-family="system-ui" font-size="13" fill="#172033">33/72 · 45.8%</text><rect x="650" y="300" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="300" width="23.8" height="24" rx="6" fill="#2563eb"/><text x="850" y="317" font-family="system-ui" font-size="13" fill="#172033">9/72 · 12.5%</text><text x="185" y="360" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Ronda de 32</text><text x="230" y="360" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">16 pj.</text><rect x="285" y="342" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="342" width="100.6" height="24" rx="6" fill="#16a34a"/><text x="525" y="359" font-family="system-ui" font-size="13" fill="#172033">7/16 · 43.8%</text><rect x="650" y="342" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="342" width="0.0" height="24" rx="6" fill="#2563eb"/><text x="850" y="359" font-family="system-ui" font-size="13" fill="#172033">0/16 · 0.0%</text><text x="185" y="402" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Octavos</text><text x="230" y="402" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">8 pj.</text><rect x="285" y="384" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="384" width="115.0" height="24" rx="6" fill="#16a34a"/><text x="525" y="401" font-family="system-ui" font-size="13" fill="#172033">4/8 · 50.0%</text><rect x="650" y="384" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="384" width="23.8" height="24" rx="6" fill="#2563eb"/><text x="850" y="401" font-family="system-ui" font-size="13" fill="#172033">1/8 · 12.5%</text><text x="185" y="444" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Cuartos</text><text x="230" y="444" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">4 pj.</text><rect x="285" y="426" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="426" width="172.5" height="24" rx="6" fill="#16a34a"/><text x="525" y="443" font-family="system-ui" font-size="13" fill="#172033">3/4 · 75.0%</text><rect x="650" y="426" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="426" width="0.0" height="24" rx="6" fill="#2563eb"/><text x="850" y="443" font-family="system-ui" font-size="13" fill="#172033">0/4 · 0.0%</text><text x="185" y="486" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Semifinal</text><text x="230" y="486" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">2 pj.</text><rect x="285" y="468" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="468" width="0.0" height="24" rx="6" fill="#16a34a"/><text x="525" y="485" font-family="system-ui" font-size="13" fill="#172033">0/2 · 0.0%</text><rect x="650" y="468" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="468" width="0.0" height="24" rx="6" fill="#2563eb"/><text x="850" y="485" font-family="system-ui" font-size="13" fill="#172033">0/2 · 0.0%</text><text x="185" y="528" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Tercer puesto</text><text x="230" y="528" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">1 pj.</text><rect x="285" y="510" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="510" width="0.0" height="24" rx="6" fill="#16a34a"/><text x="525" y="527" font-family="system-ui" font-size="13" fill="#172033">0/1 · 0.0%</text><rect x="650" y="510" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="510" width="0.0" height="24" rx="6" fill="#2563eb"/><text x="850" y="527" font-family="system-ui" font-size="13" fill="#172033">0/1 · 0.0%</text><text x="185" y="570" text-anchor="end" font-family="system-ui" font-size="14" fill="#172033">Final</text><text x="230" y="570" text-anchor="middle" font-family="system-ui" font-size="13" fill="#657084">1 pj.</text><rect x="285" y="552" width="230" height="24" rx="6" fill="#e5e7eb"/><rect x="285" y="552" width="0.0" height="24" rx="6" fill="#16a34a"/><text x="525" y="569" font-family="system-ui" font-size="13" fill="#172033">0/1 · 0.0%</text><rect x="650" y="552" width="190" height="24" rx="6" fill="#e5e7eb"/><rect x="650" y="552" width="190.0" height="24" rx="6" fill="#2563eb"/><text x="850" y="569" font-family="system-ui" font-size="13" fill="#172033">1/1 · 100.0%</text>
+<text x="500" y="637" text-anchor="middle" font-family="system-ui" font-size="13"
 fill="#657084">Verde = signo acertado · Rojo = signo fallado · Total: 104 partidos</text>
 </svg>

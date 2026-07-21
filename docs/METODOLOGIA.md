@@ -103,6 +103,11 @@ Se informan accuracy 1X2, marcador exacto, selección que avanzó, MAE de goles,
 Brier, cobertura FIFA, tamaño de entrenamiento y media acumulada. Accuracy mide la clase;
 log loss y Brier evalúan la calidad probabilística y deben minimizarse.
 
+Los dos indicadores didácticos principales se publican globalmente y por fase: signos
+acertados/partidos y marcadores exactos/partidos, mostrando tanto la fracción como el
+porcentaje. El denominador es importante: 100% en una final representa un solo partido,
+no la misma evidencia que 100% en una fase de grupos.
+
 ## Análisis de variables
 
 `analyze-features` vuelve a entrenar el modelo únicamente con ediciones anteriores al

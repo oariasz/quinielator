@@ -257,7 +257,7 @@ class QuinielatorApplication:
             model_name=model_name,
             output_directory=self.config.paths.reports / f"mundial-{year}",
         )
-        paths = [report.csv, report.markdown, report.html, report.svg]
+        paths = [report.csv, report.phase_csv, report.markdown, report.html, report.svg]
         if publish_docs:
             documented = writer.write(
                 predictions,
@@ -265,7 +265,15 @@ class QuinielatorApplication:
                 model_name=model_name,
                 output_directory=self.config.paths.root / "docs" / f"resultados-{year}",
             )
-            paths.extend([documented.csv, documented.markdown, documented.html, documented.svg])
+            paths.extend(
+                [
+                    documented.csv,
+                    documented.phase_csv,
+                    documented.markdown,
+                    documented.html,
+                    documented.svg,
+                ]
+            )
         return paths
 
     def analyze_features(

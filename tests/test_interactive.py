@@ -58,7 +58,7 @@ class _FakeApplication:
 
 
 def test_interactive_reveals_only_after_enter() -> None:
-    answers = iter(["", "q"])
+    answers = iter(["", ""])
     output: list[str] = []
     printer = InteractivePredictionPrinter(
         _FakeApplication(),  # type: ignore[arg-type]
@@ -70,3 +70,7 @@ def test_interactive_reveals_only_after_enter() -> None:
     assert "Predicción: Argentina 1-1 France" in combined
     assert "Resultado a 90 minutos: Argentina 2-2 France" in combined
     assert "Penaltis: 4-2" in combined
+    assert "Indicadores de la fase final" in combined
+    assert "Signos acertados: 1/1 (100.0%)" in combined
+    assert "Marcadores exactos: 0/1 (0.0%)" in combined
+    assert "Evaluación completa del Mundial 2022" in combined

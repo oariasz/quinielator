@@ -8,6 +8,20 @@ Las prórrogas y tandas de penaltis posteriores se muestran como nota, pero no c
 - Partidos con tanda posterior ignorada: **4**
 - Leyenda: 🟩 signo acertado · 🟥 signo fallado · 🎯 marcador exacto
 
+## Indicadores por fase
+
+| Fase | Partidos | Signos acertados | % signos | Marcadores exactos | % exactos |
+|---|---:|---:|---:|---:|---:|
+| Grupos | 72 | 33/72 | 45.8% | 9/72 | 12.5% |
+| Ronda de 32 | 16 | 7/16 | 43.8% | 0/16 | 0.0% |
+| Octavos | 8 | 4/8 | 50.0% | 1/8 | 12.5% |
+| Cuartos | 4 | 3/4 | 75.0% | 0/4 | 0.0% |
+| Semifinal | 2 | 0/2 | 0.0% | 0/2 | 0.0% |
+| Tercer puesto | 1 | 0/1 | 0.0% | 0/1 | 0.0% |
+| Final | 1 | 0/1 | 0.0% | 1/1 | 100.0% |
+
+## Resultados partido por partido
+
 | # | Fecha | Fase | Partido | Predicción | Signo P | Real 90′ | Signo R | Evaluación |
 |---:|---|---|---|---:|:---:|---:|:---:|---|
 | 1 | 2026-06-11 | Grupos | Mexico — South Africa | 0–0 | X | 2–0 | 1 | 🟥 |

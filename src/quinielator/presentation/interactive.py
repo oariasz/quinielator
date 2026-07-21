@@ -135,14 +135,50 @@ class InteractivePredictionPrinter:
                 shown += 1
                 if not self._pause("\nPulsa Enter para continuar o escribe q para salir: "):
                     return
+            phase_sign_hits = int(
+                stage_matches["predicted_outcome"].eq(stage_matches["actual_outcome"]).sum()
+            )
+            phase_exact_hits = int(
+                (
+                    stage_matches["predicted_home_goals"].eq(stage_matches["actual_home_goals"])
+                    & stage_matches["predicted_away_goals"].eq(stage_matches["actual_away_goals"])
+                ).sum()
+            )
+            phase_matches = len(stage_matches)
+            self.output_fn("")
+            self.output_fn(f"Indicadores de la fase {stage_matches.iloc[0]['stage_name']}")
+            self.output_fn(
+                f"Signos acertados: {phase_sign_hits}/{phase_matches} "
+                f"({phase_sign_hits / phase_matches:.1%})"
+            )
+            self.output_fn(
+                f"Marcadores exactos: {phase_exact_hits}/{phase_matches} "
+                f"({phase_exact_hits / phase_matches:.1%})"
+            )
             metric_row = metrics[metrics["tournament_year"].eq(year)]
             if not metric_row.empty:
                 item = metric_row.iloc[0]
+                tournament_sign_hits = int(
+                    tournament["predicted_outcome"].eq(tournament["actual_outcome"]).sum()
+                )
+                tournament_exact_hits = int(
+                    (
+                        tournament["predicted_home_goals"].eq(tournament["actual_home_goals"])
+                        & tournament["predicted_away_goals"].eq(tournament["actual_away_goals"])
+                    ).sum()
+                )
+                tournament_matches = len(tournament)
                 self.output_fn("")
                 self.output_fn(f"Evaluación completa del Mundial {year}")
-                self.output_fn(f"Partidos predichos: {int(item['matches'])}")
-                self.output_fn(f"Accuracy 1X2: {item['outcome_accuracy']:.1%}")
-                self.output_fn(f"Marcadores exactos: {item['exact_score_accuracy']:.1%}")
+                self.output_fn(f"Partidos predichos: {tournament_matches}")
+                self.output_fn(
+                    f"Signos acertados: {tournament_sign_hits}/{tournament_matches} "
+                    f"({tournament_sign_hits / tournament_matches:.1%})"
+                )
+                self.output_fn(
+                    f"Marcadores exactos: {tournament_exact_hits}/{tournament_matches} "
+                    f"({tournament_exact_hits / tournament_matches:.1%})"
+                )
                 self.output_fn(f"MAE de goles: {item['goals_mae']:.3f}")
                 self.output_fn(f"Log loss: {item['log_loss']:.3f}")
         if shown == 0:

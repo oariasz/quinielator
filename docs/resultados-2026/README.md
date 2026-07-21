@@ -10,10 +10,15 @@ anotan como contexto posterior.
   rojo = fallo y 🎯 = signo más marcador exacto.
 - [Tabla Markdown](mundial_2026_ensemble.md).
 - [CSV completo](mundial_2026_ensemble.csv).
+- [CSV de indicadores por fase](mundial_2026_ensemble_por_fase.csv).
 - [Resumen SVG](mundial_2026_ensemble_resumen.svg).
 
 Resultado: 47/104 signos (45,2%), 11/104 marcadores exactos (10,6%) y cuatro tandas
 posteriores ignoradas correctamente para 1/X/2.
+
+El HTML, Markdown y SVG incluyen porcentajes por fase. El CSV separado conserva para
+cada ronda el número de partidos, aciertos de signo, marcadores exactos y ambos
+porcentajes.
 
 ## Feature analysis
 

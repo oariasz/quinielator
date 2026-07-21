@@ -1,0 +1,8 @@
+stage,matches,sign_hits,sign_accuracy,exact_scores,exact_score_accuracy
+Grupos,72,33,0.4583333333333333,9,0.125
+Ronda de 32,16,7,0.4375,0,0.0
+Octavos,8,4,0.5,1,0.125
+Cuartos,4,3,0.75,0,0.0
+Semifinal,2,0,0.0,0,0.0
+Tercer puesto,1,0,0.0,0,0.0
+Final,1,0,0.0,1,1.0

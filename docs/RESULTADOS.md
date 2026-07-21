@@ -45,11 +45,28 @@ signo; cuatro tandas posteriores están señaladas, pero no cuentan para 1/X/2.
 - [Tabla HTML a color](resultados-2026/mundial_2026_ensemble.html)
 - [Tabla Markdown](resultados-2026/mundial_2026_ensemble.md)
 - [CSV auditable](resultados-2026/mundial_2026_ensemble.csv)
+- [Indicadores por fase](resultados-2026/mundial_2026_ensemble_por_fase.csv)
 - [Resumen visual SVG](resultados-2026/mundial_2026_ensemble_resumen.svg)
 
 Distribución predicha: 30 signos `1`, 31 signos `X` y 43 signos `2`. Distribución real:
 52 signos `1`, 29 signos `X` y 23 signos `2`. El modelo subestimó las victorias del
 primer equipo bajo la orientación prepartido del proyecto.
+
+### Indicadores por fase
+
+| Fase | Partidos | Signos acertados | Marcadores exactos |
+|---|---:|---:|---:|
+| Grupos | 72 | 33/72 (45,8%) | 9/72 (12,5%) |
+| Ronda de 32 | 16 | 7/16 (43,8%) | 0/16 (0,0%) |
+| Octavos | 8 | 4/8 (50,0%) | 1/8 (12,5%) |
+| Cuartos | 4 | 3/4 (75,0%) | 0/4 (0,0%) |
+| Semifinal | 2 | 0/2 (0,0%) | 0/2 (0,0%) |
+| Tercer puesto | 1 | 0/1 (0,0%) | 0/1 (0,0%) |
+| Final | 1 | 0/1 (0,0%) | 1/1 (100,0%) |
+
+Los porcentajes de las rondas finales deben leerse junto a su denominador. El 100% de
+marcador exacto en la final corresponde a un único partido; no es evidencia comparable
+con las 72 observaciones de la fase de grupos.
 
 ## Ejemplo: final de 2026
 

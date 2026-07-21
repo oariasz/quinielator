@@ -128,9 +128,10 @@ En `reports/` encontrarás:
 - `calibration_ensemble.csv`: confianza declarada frente a acierto observado;
 - `model_comparison.csv` y `.md`: comparación de todos los modelos evaluados.
 
-Con `--world-cup 2026` también se crean una tabla completa CSV/Markdown/HTML y un resumen
-SVG. `--publish-docs` copia esos cuatro artefactos a `docs/resultados-2026/`; no inicia
-un servidor ni publica nada fuera del repositorio.
+Con `--world-cup 2026` también se crean una tabla completa CSV/Markdown/HTML, un resumen
+SVG y un CSV por fase. El HTML, Markdown y SVG presentan tanto el porcentaje de signos
+como el de marcadores exactos para cada ronda. `--publish-docs` copia esos artefactos a
+`docs/resultados-2026/`; no inicia un servidor ni publica nada fuera del repositorio.
 
 Interpretación:
 
@@ -180,6 +181,9 @@ Flujo de cada partido:
 3. Ves si acertó 1X2, selección que avanzó y marcador exacto.
 4. Pulsas Enter para continuar; escribe `q` en cualquier pausa para salir.
 5. Al acabar esa fase, ves las métricas de todos los partidos del Mundial.
+
+Antes del resumen completo también aparecen los dos indicadores de la fase elegida con
+su fracción y porcentaje, por ejemplo `3/4 (75,0%)` en signos de cuartos.
 
 Acota los años para una sesión corta:
 

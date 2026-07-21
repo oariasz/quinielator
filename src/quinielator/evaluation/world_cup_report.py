@@ -16,6 +16,7 @@ class WorldCupReportArtifacts:
     """Rutas generadas para consultar o reutilizar el reporte."""
 
     csv: Path
+    phase_csv: Path
     markdown: Path
     html: Path
     svg: Path
@@ -102,6 +103,27 @@ class WorldCupVisualReport:
             ]
         ]
 
+    @staticmethod
+    def build_phase_summary(table: pd.DataFrame) -> pd.DataFrame:
+        """Calcula los dos indicadores principales para cada fase, en orden temporal."""
+
+        records: list[dict[str, float | int | str]] = []
+        for stage_label, group in table.groupby("stage_label", sort=False):
+            matches = len(group)
+            sign_hits = int(group["sign_correct"].sum())
+            exact_scores = int(group["exact_score"].sum())
+            records.append(
+                {
+                    "stage": str(stage_label),
+                    "matches": matches,
+                    "sign_hits": sign_hits,
+                    "sign_accuracy": sign_hits / matches,
+                    "exact_scores": exact_scores,
+                    "exact_score_accuracy": exact_scores / matches,
+                }
+            )
+        return pd.DataFrame.from_records(records)
+
     def write(
         self,
         predictions: pd.DataFrame,
@@ -116,14 +138,22 @@ class WorldCupVisualReport:
         table = self.build_table(predictions, year)
         stem = f"mundial_{year}_{model_name}"
         csv_path = output_directory / f"{stem}.csv"
+        phase_csv_path = output_directory / f"{stem}_por_fase.csv"
         markdown_path = output_directory / f"{stem}.md"
         html_path = output_directory / f"{stem}.html"
         svg_path = output_directory / f"{stem}_resumen.svg"
         table.to_csv(csv_path, index=False)
+        self.build_phase_summary(table).to_csv(phase_csv_path, index=False)
         markdown_path.write_text(self._markdown(table, year, model_name), encoding="utf-8")
         html_path.write_text(self._html(table, year, model_name), encoding="utf-8")
         svg_path.write_text(self._svg(table, year, model_name), encoding="utf-8")
-        return WorldCupReportArtifacts(csv_path, markdown_path, html_path, svg_path)
+        return WorldCupReportArtifacts(
+            csv_path,
+            phase_csv_path,
+            markdown_path,
+            html_path,
+            svg_path,
+        )
 
     @staticmethod
     def _result_label(row: pd.Series, sign_column: str) -> str:
@@ -172,6 +202,7 @@ class WorldCupVisualReport:
 
     def _markdown(self, table: pd.DataFrame, year: int, model_name: str) -> str:
         summary = self._summary(table)
+        phases = self.build_phase_summary(table)
         lines = [
             f"# Predicciones completas del Mundial {year}",
             "",
@@ -186,10 +217,29 @@ class WorldCupVisualReport:
             f"- Partidos con tanda posterior ignorada: **{summary['penalties']}**",
             "- Leyenda: 🟩 signo acertado · 🟥 signo fallado · 🎯 marcador exacto",
             "",
-            "| # | Fecha | Fase | Partido | Predicción | Signo P | Real 90′ | "
-            "Signo R | Evaluación |",
-            "|---:|---|---|---|---:|:---:|---:|:---:|---|",
+            "## Indicadores por fase",
+            "",
+            "| Fase | Partidos | Signos acertados | % signos | Marcadores exactos | % exactos |",
+            "|---|---:|---:|---:|---:|---:|",
         ]
+        for _, phase in phases.iterrows():
+            lines.append(
+                f"| {phase['stage']} | {int(phase['matches'])} | "
+                f"{int(phase['sign_hits'])}/{int(phase['matches'])} | "
+                f"{phase['sign_accuracy']:.1%} | "
+                f"{int(phase['exact_scores'])}/{int(phase['matches'])} | "
+                f"{phase['exact_score_accuracy']:.1%} |"
+            )
+        lines.extend(
+            [
+                "",
+                "## Resultados partido por partido",
+                "",
+                "| # | Fecha | Fase | Partido | Predicción | Signo P | Real 90′ | "
+                "Signo R | Evaluación |",
+                "|---:|---|---|---|---:|:---:|---:|:---:|---|",
+            ]
+        )
         for _, row in table.iterrows():
             marker = "🟩" if bool(row["sign_correct"]) else "🟥"
             if bool(row["exact_score"]):
@@ -212,7 +262,22 @@ class WorldCupVisualReport:
 
     def _html(self, table: pd.DataFrame, year: int, model_name: str) -> str:
         summary = self._summary(table)
+        phases = self.build_phase_summary(table)
         hit_width = float(summary["accuracy"]) * 100.0
+        phase_rows: list[str] = []
+        for _, phase in phases.iterrows():
+            sign_accuracy = float(phase["sign_accuracy"])
+            exact_accuracy = float(phase["exact_score_accuracy"])
+            phase_rows.append(
+                f"""<tr><td><strong>{escape(str(phase["stage"]))}</strong></td>
+<td>{int(phase["matches"])}</td>
+<td>{int(phase["sign_hits"])}/{int(phase["matches"])}</td>
+<td><strong>{sign_accuracy:.1%}</strong><div class="mini-bar sign-bar">
+<span style="width:{sign_accuracy * 100.0:.3f}%"></span></div></td>
+<td>{int(phase["exact_scores"])}/{int(phase["matches"])}</td>
+<td><strong>{exact_accuracy:.1%}</strong><div class="mini-bar exact-bar">
+<span style="width:{exact_accuracy * 100.0:.3f}%"></span></div></td></tr>"""
+            )
         rows: list[str] = []
         for _, row in table.iterrows():
             correct = bool(row["sign_correct"])
@@ -263,8 +328,10 @@ X: {float(row["probability_draw"]):.1%}<br>2: {float(row["probability_away"]):.1
 --blue:#2563eb;--ink:#172033;--muted:#657084;--line:#dce2ea}}
 *{{box-sizing:border-box}} body{{font-family:Inter,system-ui,-apple-system,sans-serif;
 margin:0;background:#f4f7fb;color:var(--ink)}} main{{max-width:1500px;margin:auto;padding:32px}}
-h1{{margin:0 0 8px}} .subtitle{{color:var(--muted);margin-bottom:24px}}
-.cards{{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px;margin:20px 0}}
+h1{{margin:0 0 8px}} h2{{margin:30px 0 8px}}
+.subtitle{{color:var(--muted);margin-bottom:24px}}
+.cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;
+margin:20px 0}}
 .card{{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}}
 .value{{font-size:30px;font-weight:800}} .label{{color:var(--muted);font-size:13px}}
 .bar{{height:28px;background:var(--red);border-radius:10px;overflow:hidden;margin:18px 0 8px}}
@@ -272,7 +339,8 @@ h1{{margin:0 0 8px}} .subtitle{{color:var(--muted);margin-bottom:24px}}
 .legend{{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--muted)}}
 .dot{{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px}}
 .table-wrap{{overflow:auto;background:white;border:1px solid var(--line);border-radius:14px}}
-table{{border-collapse:collapse;width:100%;min-width:1180px;font-size:13px}}
+table{{border-collapse:collapse;width:100%;font-size:13px}} .matches-table{{min-width:1180px}}
+.phase-table{{min-width:760px}} .phase-table td{{background:white}}
 th{{position:sticky;top:0;background:#172033;color:white;padding:12px 9px;text-align:left}}
 td{{border-bottom:1px solid var(--line);padding:10px 9px;vertical-align:middle}}
 tr.hit{{background:var(--green-bg);border-left:6px solid var(--green)}}
@@ -281,6 +349,9 @@ tr.exact{{background:#dcfce7}} .score{{font-size:20px;font-weight:800;text-align
 .sign{{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;
 background:#172033;color:white;font-size:17px;font-weight:800}} .prob{{white-space:nowrap}}
 .note{{font-size:11px;color:var(--muted);margin-top:5px;max-width:180px}}
+.mini-bar{{height:7px;width:100%;min-width:110px;background:#e5e7eb;border-radius:5px;
+overflow:hidden;margin-top:5px}} .mini-bar span{{display:block;height:100%;border-radius:5px}}
+.sign-bar span{{background:var(--green)}} .exact-bar span{{background:var(--blue)}}
 @media(max-width:800px){{main{{padding:18px}}.cards{{grid-template-columns:1fr 1fr}}}}
 </style></head><body><main>
 <h1>Mundial {year}: predicción vs. resultado real</h1>
@@ -290,9 +361,11 @@ evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resulta
 <div class="card"><div class="value">{summary["hits"]}/{summary["matches"]}</div>
 <div class="label">signos acertados</div></div>
 <div class="card"><div class="value">{summary["accuracy"]:.1%}</div>
-<div class="label">accuracy 1/X/2</div></div>
-<div class="card"><div class="value">{summary["exact"]}</div>
+<div class="label">% de signos acertados</div></div>
+<div class="card"><div class="value">{summary["exact"]}/{summary["matches"]}</div>
 <div class="label">marcadores exactos</div></div>
+<div class="card"><div class="value">{summary["exact_accuracy"]:.1%}</div>
+<div class="label">% de marcadores exactos</div></div>
 <div class="card"><div class="value">{summary["penalties"]}</div>
 <div class="label">tandas posteriores ignoradas</div></div>
 </section>
@@ -300,7 +373,14 @@ evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resulta
 <div class="legend"><span><i class="dot" style="background:var(--green)"></i>Acierto</span>
 <span><i class="dot" style="background:var(--red)"></i>Fallo</span>
 <span>🎯 Signo y marcador exacto</span></div>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>Fecha</th><th>Fase</th>
+<h2>Indicadores por fase</h2>
+<p class="subtitle">Porcentaje de signos 1/X/2 y marcadores exactos acertados en cada ronda.</p>
+<div class="table-wrap"><table class="phase-table"><thead><tr><th>Fase</th><th>Partidos</th>
+<th>Signos</th><th>% signos</th><th>Exactos</th><th>% exactos</th></tr></thead>
+<tbody>{"".join(phase_rows)}</tbody></table></div>
+<h2>Resultados partido por partido</h2>
+<div class="table-wrap"><table class="matches-table"><thead><tr>
+<th>#</th><th>Fecha</th><th>Fase</th>
 <th>Partido</th><th>Pred.</th><th>Signo predicho</th><th>Probabilidades</th>
 <th>Real 90′</th><th>Signo real</th><th>Evaluación</th></tr></thead>
 <tbody>{"".join(rows)}</tbody></table></div>
@@ -308,7 +388,11 @@ evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resulta
 
     def _svg(self, table: pd.DataFrame, year: int, model_name: str) -> str:
         summary = self._summary(table)
-        width, height = 1000, 310
+        phases = self.build_phase_summary(table)
+        width = 1000
+        phase_top = 300
+        phase_row_height = 42
+        height = phase_top + len(phases) * phase_row_height + 65
         left, bar_width = 70, 860
         hit_width = bar_width * float(summary["accuracy"])
         actual_counts = table["actual_sign"].value_counts()
@@ -325,6 +409,29 @@ evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resulta
         footer = (
             f"Verde = signo acertado · Rojo = signo fallado · Total: {summary['matches']} partidos"
         )
+        phase_elements: list[str] = []
+        for position, (_, phase) in enumerate(phases.iterrows()):
+            y = phase_top + position * phase_row_height
+            sign_accuracy = float(phase["sign_accuracy"])
+            exact_accuracy = float(phase["exact_score_accuracy"])
+            phase_elements.append(
+                f'<text x="185" y="{y + 18}" text-anchor="end" font-family="system-ui" '
+                f'font-size="14" fill="#172033">{escape(str(phase["stage"]))}</text>'
+                f'<text x="230" y="{y + 18}" text-anchor="middle" font-family="system-ui" '
+                f'font-size="13" fill="#657084">{int(phase["matches"])} pj.</text>'
+                f'<rect x="285" y="{y}" width="230" height="24" rx="6" fill="#e5e7eb"/>'
+                f'<rect x="285" y="{y}" width="{230 * sign_accuracy:.1f}" height="24" '
+                f'rx="6" fill="#16a34a"/>'
+                f'<text x="525" y="{y + 17}" font-family="system-ui" font-size="13" '
+                f'fill="#172033">{int(phase["sign_hits"])}/{int(phase["matches"])} · '
+                f"{sign_accuracy:.1%}</text>"
+                f'<rect x="650" y="{y}" width="190" height="24" rx="6" fill="#e5e7eb"/>'
+                f'<rect x="650" y="{y}" width="{190 * exact_accuracy:.1f}" height="24" '
+                f'rx="6" fill="#2563eb"/>'
+                f'<text x="850" y="{y + 17}" font-family="system-ui" font-size="13" '
+                f'fill="#172033">{int(phase["exact_scores"])}/{int(phase["matches"])} · '
+                f"{exact_accuracy:.1%}</text>"
+            )
         return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}"
 viewBox="0 0 {width} {height}">
 <rect width="100%" height="100%" rx="18" fill="#f8fafc"/>
@@ -344,9 +451,9 @@ font-weight="800" fill="#16a34a">{summary["accuracy"]:.1%}</text>
 <text x="165" y="214" text-anchor="middle" font-family="system-ui" font-size="13"
 fill="#657084">accuracy de signo</text>
 <text x="385" y="190" text-anchor="middle" font-family="system-ui" font-size="29"
-font-weight="800" fill="#2563eb">{summary["exact"]}</text>
+font-weight="800" fill="#2563eb">{summary["exact_accuracy"]:.1%}</text>
 <text x="385" y="214" text-anchor="middle" font-family="system-ui" font-size="13"
-fill="#657084">marcadores exactos</text>
+fill="#657084">{summary["exact"]}/{summary["matches"]} marcadores exactos</text>
 <text x="650" y="184" text-anchor="middle" font-family="system-ui" font-size="15"
 font-weight="700" fill="#172033">Signos reales</text>
 <text x="650" y="210" text-anchor="middle" font-family="system-ui" font-size="14"
@@ -355,7 +462,14 @@ fill="#657084">{escape(actual_summary)}</text>
 font-weight="700" fill="#172033">Signos predichos</text>
 <text x="850" y="210" text-anchor="middle" font-family="system-ui" font-size="14"
 fill="#657084">{escape(predicted_summary)}</text>
-<text x="500" y="272" text-anchor="middle" font-family="system-ui" font-size="13"
+<text x="185" y="275" text-anchor="end" font-family="system-ui" font-size="15"
+font-weight="700" fill="#172033">Indicadores por fase</text>
+<text x="400" y="275" text-anchor="middle" font-family="system-ui" font-size="13"
+font-weight="700" fill="#16a34a">Signos acertados</text>
+<text x="745" y="275" text-anchor="middle" font-family="system-ui" font-size="13"
+font-weight="700" fill="#2563eb">Marcadores exactos</text>
+{"".join(phase_elements)}
+<text x="500" y="{height - 22}" text-anchor="middle" font-family="system-ui" font-size="13"
 fill="#657084">{escape(footer)}</text>
 </svg>
 """

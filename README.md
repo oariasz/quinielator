@@ -99,6 +99,7 @@ minutos: las cuatro tandas posteriores se anotan, pero no alteran el signo.
 - [Abrir la tabla HTML a color](docs/resultados-2026/mundial_2026_ensemble.html)
 - [Tabla Markdown](docs/resultados-2026/mundial_2026_ensemble.md)
 - [Datos CSV](docs/resultados-2026/mundial_2026_ensemble.csv)
+- [Indicadores por fase en CSV](docs/resultados-2026/mundial_2026_ensemble_por_fase.csv)
 - [Resumen SVG](docs/resultados-2026/mundial_2026_ensemble_resumen.svg)
 - [Análisis de variables](docs/resultados-2026/features_ensemble_2026.md)
 - [Gráfico de importancia](docs/resultados-2026/features_ensemble_2026.svg)
@@ -106,6 +107,10 @@ minutos: las cuatro tandas posteriores se anotan, pero no alteran el signo.
 La importancia por familias fue: experiencia 37,7%, contexto 21,1%, forma/resultados
 20,5%, goles recientes 10,8%, descanso 7,1%, Elo 2,6% y ranking FIFA 0,2%. Son
 asociaciones predictivas por permutación, no efectos causales.
+
+El HTML, Markdown, SVG y CSV por fase muestran dos indicadores principales: porcentaje
+de signos 1/X/2 acertados y porcentaje de marcadores exactos, siempre acompañados del
+numerador y el total de partidos para no ocultar el tamaño de la muestra.
 
 ## Comandos
 

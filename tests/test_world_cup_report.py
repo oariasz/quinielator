@@ -64,12 +64,21 @@ def test_world_cup_report_uses_90_minute_sign_and_colours(tmp_path: Path) -> Non
     assert table["actual_sign"].tolist() == ["1", "X"]
     assert table["sign_correct"].tolist() == [True, False]
     assert "no cuentan para el signo" in table.iloc[1]["after_90_note"]
+    phases = report.build_phase_summary(table)
+    assert phases["stage"].tolist() == ["Grupos", "Ronda de 32"]
+    assert phases["sign_accuracy"].tolist() == [1.0, 0.0]
+    assert phases["exact_score_accuracy"].tolist() == [1.0, 1.0]
 
     artifacts = report.write(
         _predictions(), year=2026, model_name="test", output_directory=tmp_path
     )
     html = artifacts.html.read_text(encoding="utf-8")
     markdown = artifacts.markdown.read_text(encoding="utf-8")
+    phase_csv = pd.read_csv(artifacts.phase_csv)
     assert 'class="hit exact"' in html
     assert 'class="miss exact-score"' in html
+    assert "Indicadores por fase" in html
+    assert "% de marcadores exactos" in html
     assert "🟩" in markdown and "🟥" in markdown
+    assert "## Indicadores por fase" in markdown
+    assert len(phase_csv) == 2

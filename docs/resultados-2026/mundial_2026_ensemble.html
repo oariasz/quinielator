@@ -7,8 +7,10 @@
 --blue:#2563eb;--ink:#172033;--muted:#657084;--line:#dce2ea}
 *{box-sizing:border-box} body{font-family:Inter,system-ui,-apple-system,sans-serif;
 margin:0;background:#f4f7fb;color:var(--ink)} main{max-width:1500px;margin:auto;padding:32px}
-h1{margin:0 0 8px} .subtitle{color:var(--muted);margin-bottom:24px}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px;margin:20px 0}
+h1{margin:0 0 8px} h2{margin:30px 0 8px}
+.subtitle{color:var(--muted);margin-bottom:24px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;
+margin:20px 0}
 .card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}
 .value{font-size:30px;font-weight:800} .label{color:var(--muted);font-size:13px}
 .bar{height:28px;background:var(--red);border-radius:10px;overflow:hidden;margin:18px 0 8px}
@@ -16,7 +18,8 @@ h1{margin:0 0 8px} .subtitle{color:var(--muted);margin-bottom:24px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--muted)}
 .dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px}
 .table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:14px}
-table{border-collapse:collapse;width:100%;min-width:1180px;font-size:13px}
+table{border-collapse:collapse;width:100%;font-size:13px} .matches-table{min-width:1180px}
+.phase-table{min-width:760px} .phase-table td{background:white}
 th{position:sticky;top:0;background:#172033;color:white;padding:12px 9px;text-align:left}
 td{border-bottom:1px solid var(--line);padding:10px 9px;vertical-align:middle}
 tr.hit{background:var(--green-bg);border-left:6px solid var(--green)}
@@ -25,6 +28,9 @@ tr.exact{background:#dcfce7} .score{font-size:20px;font-weight:800;text-align:ce
 .sign{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;
 background:#172033;color:white;font-size:17px;font-weight:800} .prob{white-space:nowrap}
 .note{font-size:11px;color:var(--muted);margin-top:5px;max-width:180px}
+.mini-bar{height:7px;width:100%;min-width:110px;background:#e5e7eb;border-radius:5px;
+overflow:hidden;margin-top:5px} .mini-bar span{display:block;height:100%;border-radius:5px}
+.sign-bar span{background:var(--green)} .exact-bar span{background:var(--blue)}
 @media(max-width:800px){main{padding:18px}.cards{grid-template-columns:1fr 1fr}}
 </style></head><body><main>
 <h1>Mundial 2026: predicción vs. resultado real</h1>
@@ -34,9 +40,11 @@ evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resulta
 <div class="card"><div class="value">47/104</div>
 <div class="label">signos acertados</div></div>
 <div class="card"><div class="value">45.2%</div>
-<div class="label">accuracy 1/X/2</div></div>
-<div class="card"><div class="value">11</div>
+<div class="label">% de signos acertados</div></div>
+<div class="card"><div class="value">11/104</div>
 <div class="label">marcadores exactos</div></div>
+<div class="card"><div class="value">10.6%</div>
+<div class="label">% de marcadores exactos</div></div>
 <div class="card"><div class="value">4</div>
 <div class="label">tandas posteriores ignoradas</div></div>
 </section>
@@ -44,7 +52,63 @@ evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resulta
 <div class="legend"><span><i class="dot" style="background:var(--green)"></i>Acierto</span>
 <span><i class="dot" style="background:var(--red)"></i>Fallo</span>
 <span>🎯 Signo y marcador exacto</span></div>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>Fecha</th><th>Fase</th>
+<h2>Indicadores por fase</h2>
+<p class="subtitle">Porcentaje de signos 1/X/2 y marcadores exactos acertados en cada ronda.</p>
+<div class="table-wrap"><table class="phase-table"><thead><tr><th>Fase</th><th>Partidos</th>
+<th>Signos</th><th>% signos</th><th>Exactos</th><th>% exactos</th></tr></thead>
+<tbody><tr><td><strong>Grupos</strong></td>
+<td>72</td>
+<td>33/72</td>
+<td><strong>45.8%</strong><div class="mini-bar sign-bar">
+<span style="width:45.833%"></span></div></td>
+<td>9/72</td>
+<td><strong>12.5%</strong><div class="mini-bar exact-bar">
+<span style="width:12.500%"></span></div></td></tr><tr><td><strong>Ronda de 32</strong></td>
+<td>16</td>
+<td>7/16</td>
+<td><strong>43.8%</strong><div class="mini-bar sign-bar">
+<span style="width:43.750%"></span></div></td>
+<td>0/16</td>
+<td><strong>0.0%</strong><div class="mini-bar exact-bar">
+<span style="width:0.000%"></span></div></td></tr><tr><td><strong>Octavos</strong></td>
+<td>8</td>
+<td>4/8</td>
+<td><strong>50.0%</strong><div class="mini-bar sign-bar">
+<span style="width:50.000%"></span></div></td>
+<td>1/8</td>
+<td><strong>12.5%</strong><div class="mini-bar exact-bar">
+<span style="width:12.500%"></span></div></td></tr><tr><td><strong>Cuartos</strong></td>
+<td>4</td>
+<td>3/4</td>
+<td><strong>75.0%</strong><div class="mini-bar sign-bar">
+<span style="width:75.000%"></span></div></td>
+<td>0/4</td>
+<td><strong>0.0%</strong><div class="mini-bar exact-bar">
+<span style="width:0.000%"></span></div></td></tr><tr><td><strong>Semifinal</strong></td>
+<td>2</td>
+<td>0/2</td>
+<td><strong>0.0%</strong><div class="mini-bar sign-bar">
+<span style="width:0.000%"></span></div></td>
+<td>0/2</td>
+<td><strong>0.0%</strong><div class="mini-bar exact-bar">
+<span style="width:0.000%"></span></div></td></tr><tr><td><strong>Tercer puesto</strong></td>
+<td>1</td>
+<td>0/1</td>
+<td><strong>0.0%</strong><div class="mini-bar sign-bar">
+<span style="width:0.000%"></span></div></td>
+<td>0/1</td>
+<td><strong>0.0%</strong><div class="mini-bar exact-bar">
+<span style="width:0.000%"></span></div></td></tr><tr><td><strong>Final</strong></td>
+<td>1</td>
+<td>0/1</td>
+<td><strong>0.0%</strong><div class="mini-bar sign-bar">
+<span style="width:0.000%"></span></div></td>
+<td>1/1</td>
+<td><strong>100.0%</strong><div class="mini-bar exact-bar">
+<span style="width:100.000%"></span></div></td></tr></tbody></table></div>
+<h2>Resultados partido por partido</h2>
+<div class="table-wrap"><table class="matches-table"><thead><tr>
+<th>#</th><th>Fecha</th><th>Fase</th>
 <th>Partido</th><th>Pred.</th><th>Signo predicho</th><th>Probabilidades</th>
 <th>Real 90′</th><th>Signo real</th><th>Evaluación</th></tr></thead>
 <tbody><tr class="miss">
