@@ -163,9 +163,9 @@ mypy src/quinielator
 pytest
 ```
 
-El workflow de GitHub Actions ejecuta esas comprobaciones sin descargar datasets ni
-entrenar TensorFlow. Los resultados medidos están documentados en
-[RESULTADOS.md](docs/RESULTADOS.md) y el tutorial completo en
+No se incluye GitHub Actions para evitar consumir minutos de CI en este proyecto
+personal. Las comprobaciones se ejecutan localmente. Los resultados medidos están
+documentados en [RESULTADOS.md](docs/RESULTADOS.md) y el tutorial completo en
 [MANUAL_DE_USO.md](docs/MANUAL_DE_USO.md).
 
 ## Limitaciones

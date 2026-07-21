@@ -1,4 +1,4 @@
-"""Fixtures sintéticos pequeños; CI nunca descarga datos reales."""
+"""Fixtures sintéticos pequeños; las pruebas nunca descargan datos reales."""
 
 from __future__ import annotations
 

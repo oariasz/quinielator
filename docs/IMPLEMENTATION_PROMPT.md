@@ -430,7 +430,7 @@ Genera en `reports/` predicciones CSV/JSON, métricas por Mundial/fase/modelo, c
 
 ## Calidad
 
-Configura pytest, pruebas unitarias e integración, fixtures, Ruff, formateo, mypy, cobertura y GitHub Actions. Añade pruebas de normalización, Elo, forma, ranking temporal, penaltis, features, probabilidades, métricas, fases históricas, 1950, alias `seminfinal`, salida `q`, serialización, data leakage y reproducibilidad.
+Configura pytest, pruebas unitarias e integración, fixtures, Ruff, formateo, mypy y cobertura. Añade pruebas de normalización, Elo, forma, ranking temporal, penaltis, features, probabilidades, métricas, fases históricas, 1950, alias `seminfinal`, salida `q`, serialización, data leakage y reproducibilidad.
 
 ## README y manual
 
@@ -464,9 +464,11 @@ No documentes comandos que no hayas probado.
 
 Ejecuta descarga/carga de datos reales, validación, preparación, entrenamiento, evaluación walk-forward, reportes y demostraciones de final, semifinales y cuartos. Presenta métricas reales y comparación con baselines. Si TensorFlow tarda demasiado, usa una configuración de demostración razonable pero deja la completa disponible.
 
-## GitHub Actions
+## Comprobaciones locales sin GitHub Actions
 
-Configura un workflow sencillo que instale el paquete y ejecute Ruff, mypy y tests con fixtures. No descargues datasets enormes ni entrenes redes completas en CI.
+No configures GitHub Actions ni otro CI remoto: es un proyecto personal y no debe
+consumir cupos. Documenta comandos locales para ejecutar Ruff, mypy y pytest. Las
+pruebas no deben descargar datasets enormes ni entrenar redes completas.
 
 ## Mandato de autonomía
 
