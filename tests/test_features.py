@@ -58,3 +58,6 @@ def test_features_are_pre_match(
     assert dataset.loc[1, "home_matches"] == 1
     assert dataset.loc[2, "home_matches"] == 1
     assert dataset.loc[2, "fifa_ranking_available"] == 1
+    assert dataset.loc[0, "home_confederation_uefa"] == 1
+    assert dataset.loc[0, "away_confederation_conmebol"] == 1
+    assert "home_confederation_code" not in TemporalDatasetBuilder.feature_columns(dataset)

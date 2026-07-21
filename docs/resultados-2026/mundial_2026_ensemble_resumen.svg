@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310"
+viewBox="0 0 1000 310">
+<rect width="100%" height="100%" rx="18" fill="#f8fafc"/>
+<text x="500" y="38" text-anchor="middle" font-family="system-ui" font-size="23"
+font-weight="700" fill="#172033">Mundial 2026 · signos 1/X/2 · ensemble</text>
+<text x="500" y="66" text-anchor="middle" font-family="system-ui" font-size="14"
+fill="#657084">Resultado reglamentario; prórroga y penaltis no cuentan</text>
+<rect x="70" y="94" width="860" height="48" rx="12" fill="#dc2626"/>
+<rect x="70" y="94" width="388.7" height="48" rx="12" fill="#16a34a"/>
+<text x="264.3" y="125" text-anchor="middle" font-family="system-ui"
+font-size="17" font-weight="700" fill="white">47 aciertos</text>
+<text x="694.3" y="125"
+text-anchor="middle" font-family="system-ui" font-size="17" font-weight="700"
+fill="white">57 fallos</text>
+<text x="165" y="190" text-anchor="middle" font-family="system-ui" font-size="29"
+font-weight="800" fill="#16a34a">45.2%</text>
+<text x="165" y="214" text-anchor="middle" font-family="system-ui" font-size="13"
+fill="#657084">accuracy de signo</text>
+<text x="385" y="190" text-anchor="middle" font-family="system-ui" font-size="29"
+font-weight="800" fill="#2563eb">11</text>
+<text x="385" y="214" text-anchor="middle" font-family="system-ui" font-size="13"
+fill="#657084">marcadores exactos</text>
+<text x="650" y="184" text-anchor="middle" font-family="system-ui" font-size="15"
+font-weight="700" fill="#172033">Signos reales</text>
+<text x="650" y="210" text-anchor="middle" font-family="system-ui" font-size="14"
+fill="#657084">1: 52 · X: 29 · 2: 23</text>
+<text x="850" y="184" text-anchor="middle" font-family="system-ui" font-size="15"
+font-weight="700" fill="#172033">Signos predichos</text>
+<text x="850" y="210" text-anchor="middle" font-family="system-ui" font-size="14"
+fill="#657084">1: 30 · X: 31 · 2: 43</text>
+<text x="500" y="272" text-anchor="middle" font-family="system-ui" font-size="13"
+fill="#657084">Verde = signo acertado · Rojo = signo fallado · Total: 104 partidos</text>
+</svg>

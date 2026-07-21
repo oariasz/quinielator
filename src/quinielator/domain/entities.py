@@ -15,6 +15,24 @@ class Outcome(StrEnum):
     AWAY = "A"
 
 
+class MatchSign(StrEnum):
+    """Signo quinielístico del resultado al terminar los 90 minutos."""
+
+    HOME = "1"
+    DRAW = "X"
+    AWAY = "2"
+
+    @classmethod
+    def from_outcome(cls, outcome: Outcome | str) -> MatchSign:
+        """Convierte la representación interna H/D/A al signo 1/X/2."""
+
+        mapping = {"H": cls.HOME, "D": cls.DRAW, "A": cls.AWAY}
+        try:
+            return mapping[str(outcome)]
+        except KeyError as error:
+            raise ValueError(f"Resultado desconocido para signo: {outcome}") from error
+
+
 class Stage(StrEnum):
     """Fases normalizadas que interesan a la experiencia interactiva."""
 

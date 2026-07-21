@@ -40,6 +40,12 @@ def _parser() -> argparse.ArgumentParser:
 
     report = subcommands.add_parser("report", help="Regenera gráficas e informe")
     report.add_argument("--model", default="poisson")
+    report.add_argument("--world-cup", type=int, help="Añade tabla visual de esa edición")
+    report.add_argument(
+        "--publish-docs",
+        action="store_true",
+        help="Copia la tabla de la edición a docs/ para versionarla",
+    )
 
     interactive = subcommands.add_parser("interactive", help="Predice, pausa y revela")
     interactive.add_argument("--stage", default="final")
@@ -56,6 +62,18 @@ def _parser() -> argparse.ArgumentParser:
     predict.add_argument("--team-a")
     predict.add_argument("--team-b")
     predict.add_argument("--model", default="poisson")
+
+    analyze = subcommands.add_parser(
+        "analyze-features", help="Explica qué variables influyeron fuera de muestra"
+    )
+    analyze.add_argument("--world-cup", type=int, required=True)
+    analyze.add_argument("--model", default="ensemble")
+    analyze.add_argument("--repeats", type=int, default=3)
+    analyze.add_argument(
+        "--publish-docs",
+        action="store_true",
+        help="Copia el análisis a docs/ para versionarlo",
+    )
 
     subcommands.add_parser("models", help="Lista modelos y disponibilidad")
     return parser
@@ -96,6 +114,7 @@ def _print_historical_prediction(
         "predicted_home_goals",
         "predicted_away_goals",
         "away_team_name",
+        "predicted_sign",
         "probability_home",
         "probability_draw",
         "probability_away",
@@ -134,6 +153,13 @@ def main(argv: Sequence[str] | None = None) -> None:
         elif args.command == "report":
             for path in application.regenerate_report(args.model):
                 print(f"Generado: {path}")
+            if args.world_cup is not None:
+                for path in application.generate_world_cup_report(
+                    model_name=args.model,
+                    year=args.world_cup,
+                    publish_docs=args.publish_docs,
+                ):
+                    print(f"Generado: {path}")
         elif args.command == "interactive":
             print_predictions(
                 stage=args.stage,
@@ -144,6 +170,14 @@ def main(argv: Sequence[str] | None = None) -> None:
             )
         elif args.command == "predict":
             _print_historical_prediction(args, application)
+        elif args.command == "analyze-features":
+            for path in application.analyze_features(
+                model_name=args.model,
+                year=args.world_cup,
+                repeats=args.repeats,
+                publish_docs=args.publish_docs,
+            ):
+                print(f"Generado: {path}")
         elif args.command == "models":
             names = ModelRegistry(application.config).names
             print("Modelos: " + ", ".join(names))

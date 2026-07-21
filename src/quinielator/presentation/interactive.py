@@ -6,7 +6,7 @@ from collections.abc import Callable
 
 import pandas as pd
 
-from quinielator.domain import Stage
+from quinielator.domain import MatchSign, Stage
 from quinielator.services import QuinielatorApplication
 
 
@@ -44,6 +44,10 @@ class InteractivePredictionPrinter:
             f"Empate {row['probability_draw']:.1%} | "
             f"{row['away_team_name']} {row['probability_away']:.1%}"
         )
+        predicted_sign = row.get(
+            "predicted_sign", MatchSign.from_outcome(str(row["predicted_outcome"])).value
+        )
+        self.output_fn(f"Signo predicho a 90 minutos: {predicted_sign} (1/X/2)")
         advancing = (
             row["home_team_name"]
             if row["predicted_advancing_team"] == row["home_team_code"]
@@ -62,6 +66,10 @@ class InteractivePredictionPrinter:
             f"{int(row['actual_home_goals'])}-{int(row['actual_away_goals'])} "
             f"{row['away_team_name']}"
         )
+        actual_sign = row.get(
+            "actual_sign", MatchSign.from_outcome(str(row["actual_outcome"])).value
+        )
+        self.output_fn(f"Signo real a 90 minutos: {actual_sign} (1/X/2)")
         if int(row["actual_home_goals_total"]) != int(row["actual_home_goals"]) or int(
             row["actual_away_goals_total"]
         ) != int(row["actual_away_goals"]):

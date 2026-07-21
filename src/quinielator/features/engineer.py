@@ -237,6 +237,17 @@ class FeatureEngineer:
             "h2h_home_points": h2h_home_points,
             "h2h_matches": h2h_matches,
         }
+        # Los códigos anteriores se conservan para auditoría. Para entrenar se
+        # añaden indicadores one-hot, evitando imponer un orden inexistente entre
+        # confederaciones como AFC, CAF, CONMEBOL o UEFA.
+        home_confederation = str(row["home_confederation"])
+        away_confederation = str(row["away_confederation"])
+        for confederation in self.CONFEDERATION_CODES:
+            if confederation == "UNK":
+                continue
+            key = confederation.lower()
+            features[f"home_confederation_{key}"] = float(home_confederation == confederation)
+            features[f"away_confederation_{key}"] = float(away_confederation == confederation)
         for key, value in home_form.items():
             features[f"home_{key}"] = value
         for key, value in away_form.items():
@@ -354,6 +365,10 @@ class TemporalDatasetBuilder:
             "home_fifa_points",
             "away_fifa_points",
             "fifa_points_difference",
+            # Son etiquetas nominales, no cantidades. El modelo usa sus columnas
+            # one-hot y conserva estos códigos solamente para auditoría.
+            "home_confederation_code",
+            "away_confederation_code",
         }
         return [
             column

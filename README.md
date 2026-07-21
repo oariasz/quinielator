@@ -15,16 +15,16 @@ solamente aprendió de ediciones anteriores (`strict_editions`).
 
 | Modelo | Accuracy 1X2 | Marcador exacto | MAE goles | Log loss | Brier |
 |---|---:|---:|---:|---:|---:|
-| Ensemble Poisson + Keras | **51,9%** | **13,2%** | **0,974** | **1,020** | **0,609** |
+| Ensemble Poisson + Keras | **51,6%** | **12,3%** | 0,985 | **1,013** | **0,606** |
+| Poisson (scikit-learn) | 51,2% | **12,3%** | **0,985** | 1,028 | 0,614 |
 | Baseline Elo | 50,3% | 12,2% | 1,028 | 1,031 | 0,617 |
-| Poisson (scikit-learn) | 50,1% | 12,1% | 0,990 | 1,035 | 0,619 |
-| Keras | 49,8% | 10,1% | 1,131 | 1,126 | 0,652 |
-| Regresión logística | 42,8% | 10,7% | 1,088 | 1,243 | 0,721 |
+| Keras | 50,8% | 10,3% | 1,162 | 1,267 | 0,657 |
+| Regresión logística | 43,0% | 10,4% | 1,096 | 1,280 | 0,722 |
 
-En 2026 el ensamble acertó el 56,7% de los resultados 1X2 y la media acumulada pasó
-de 51,3% al terminar 2022 a 51,9%. La curva por edición no es monótona: disponer de
-más historia no garantiza mejorar en cada Mundial. Ese resultado honesto es parte del
-aprendizaje del proyecto.
+En 2026 el procedimiento de ensamble seleccionó 100% Poisson usando solo validación
+anterior y acertó 47 de 104 signos: **45,2%**. La media acumulada bajó de 52,4% al
+terminar 2022 a 51,6%. La curva por edición no es monótona: disponer de más historia no
+garantiza mejorar en cada Mundial. Ese resultado honesto es parte del aprendizaje.
 
 ## Instalación rápida
 
@@ -53,6 +53,8 @@ Ejecuta el backtest del mejor modelo y abre la demostración:
 ```bash
 python -m quinielator evaluate --model ensemble
 python -m quinielator report --model ensemble
+python -m quinielator report --model ensemble --world-cup 2026 --publish-docs
+python -m quinielator analyze-features --model ensemble --world-cup 2026 --repeats 5 --publish-docs
 python -m quinielator interactive
 ```
 
@@ -71,9 +73,10 @@ print_predictions(stage="semifinal", start_year=2014)
 print_predictions(stage="cuartos", start_year=2022, end_year=2026)
 ```
 
-Primero imprime la predicción y sus probabilidades. Al pulsar Enter revela el resultado
-real; otro Enter avanza al siguiente partido o Mundial. Escribe `q` para salir. Después
-de la fase muestra la precisión calculada con todos los partidos de esa edición.
+Primero imprime la predicción, el signo `1`/`X`/`2` y sus probabilidades. Al pulsar Enter
+revela el resultado y el signo reales; otro Enter avanza al siguiente partido o Mundial.
+Escribe `q` para salir. Después de la fase muestra la precisión calculada con todos los
+partidos de esa edición.
 
 También funciona desde la terminal:
 
@@ -87,6 +90,23 @@ python -m quinielator predict --world-cup 2026 --stage final --model ensemble
 `seminfinal` se acepta deliberadamente como alias de semifinal. El Mundial de 1950 se
 omite al solicitar finales porque no tuvo una final oficial.
 
+## Reporte gráfico completo de 2026
+
+El reporte versionado contiene los 104 partidos. Verde significa signo acertado, rojo
+significa fallo y 🎯 marca además el marcador exacto. Todos los resultados son a 90
+minutos: las cuatro tandas posteriores se anotan, pero no alteran el signo.
+
+- [Abrir la tabla HTML a color](docs/resultados-2026/mundial_2026_ensemble.html)
+- [Tabla Markdown](docs/resultados-2026/mundial_2026_ensemble.md)
+- [Datos CSV](docs/resultados-2026/mundial_2026_ensemble.csv)
+- [Resumen SVG](docs/resultados-2026/mundial_2026_ensemble_resumen.svg)
+- [Análisis de variables](docs/resultados-2026/features_ensemble_2026.md)
+- [Gráfico de importancia](docs/resultados-2026/features_ensemble_2026.svg)
+
+La importancia por familias fue: experiencia 37,7%, contexto 21,1%, forma/resultados
+20,5%, goles recientes 10,8%, descanso 7,1%, Elo 2,6% y ranking FIFA 0,2%. Son
+asociaciones predictivas por permutación, no efectos causales.
+
 ## Comandos
 
 ```text
@@ -96,7 +116,8 @@ python -m quinielator data prepare
 python -m quinielator models
 python -m quinielator train --model MODEL
 python -m quinielator evaluate --model MODEL [--start-year AÑO] [--end-year AÑO]
-python -m quinielator report --model MODEL
+python -m quinielator report --model MODEL [--world-cup AÑO] [--publish-docs]
+python -m quinielator analyze-features --model MODEL --world-cup AÑO [--repeats N] [--publish-docs]
 python -m quinielator interactive --stage FASE --model MODEL
 python -m quinielator predict --world-cup AÑO --stage FASE --model MODEL
 ```
@@ -107,7 +128,7 @@ de cada resultado ya conocido y es mucho más lento.
 
 ## Cómo evita información futura
 
-Los partidos se recorren cronológicamente. Antes de cada uno se capturan las 58
+Los partidos se recorren cronológicamente. Antes de cada uno se capturan las 68
 variables disponibles y solo después se actualizan Elo, forma, enfrentamientos y
 experiencia. Los pipelines ajustan imputadores y escaladores exclusivamente con el
 conjunto de entrenamiento.
@@ -119,7 +140,8 @@ conjunto de entrenamiento.
 - Las primeras ediciones usan el baseline hasta alcanzar 200 partidos de historia.
 - Una prueba cambia un resultado futuro y verifica que las variables pasadas no cambian.
 
-Consulta [METODOLOGIA.md](docs/METODOLOGIA.md) para el diseño completo.
+Consulta [METODOLOGIA.md](docs/METODOLOGIA.md) para el diseño completo y
+[MODELOS.md](docs/MODELOS.md) para saber qué usa cada modelo y por qué.
 
 ## Arquitectura con clases
 

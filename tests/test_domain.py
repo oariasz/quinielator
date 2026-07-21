@@ -1,4 +1,6 @@
-from quinielator.domain import Stage
+import pytest
+
+from quinielator.domain import MatchSign, Stage
 
 
 def test_stage_aliases_include_spanish_and_typo() -> None:
@@ -10,3 +12,11 @@ def test_stage_aliases_include_spanish_and_typo() -> None:
 
 def test_unknown_stage_is_explicit() -> None:
     assert Stage.parse("ronda inventada") is Stage.OTHER
+
+
+def test_match_sign_maps_outcome_to_one_x_two() -> None:
+    assert MatchSign.from_outcome("H") is MatchSign.HOME
+    assert MatchSign.from_outcome("D") is MatchSign.DRAW
+    assert MatchSign.from_outcome("A") is MatchSign.AWAY
+    with pytest.raises(ValueError, match="Resultado desconocido"):
+        MatchSign.from_outcome("?")

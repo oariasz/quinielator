@@ -1,0 +1,105 @@
+number,match_id,match_date,stage_label,home_team_name,away_team_name,match,predicted_score,predicted_sign,predicted_result,probability_home,probability_draw,probability_away,actual_score_90,actual_sign,actual_result_90,sign_correct,exact_score,after_90_note,evaluation
+1,WC-2026-001,2026-06-11,Grupos,Mexico,South Africa,Mexico — South Africa,0–0,X,Empate,0.3126677615538387,0.4167193869947652,0.2706128514513959,2–0,1,Gana Mexico,False,False,,Signo fallado
+2,WC-2026-002,2026-06-11,Grupos,Czech Republic,South Korea,Czech Republic — South Korea,0–0,2,Gana South Korea,0.2953063781177111,0.3489842243066063,0.3557093975756826,1–2,2,Gana South Korea,True,False,,Signo acertado
+3,WC-2026-007,2026-06-12,Grupos,Canada,Bosnia & Herzegovina,Canada — Bosnia & Herzegovina,0–1,2,Gana Bosnia & Herzegovina,0.208841597967387,0.3267771384481962,0.4643812635844168,1–1,X,Empate,False,False,,Signo fallado
+4,WC-2026-019,2026-06-12,Grupos,United States,Paraguay,United States — Paraguay,0–0,X,Empate,0.2677485924273441,0.4310087340875943,0.3012426734850616,4–1,1,Gana United States,False,False,,Signo fallado
+5,WC-2026-008,2026-06-13,Grupos,Switzerland,Qatar,Switzerland — Qatar,1–0,1,Gana Switzerland,0.4997471409033207,0.314073119391444,0.1861797397052351,1–1,X,Empate,False,False,,Signo fallado
+6,WC-2026-013,2026-06-13,Grupos,Brazil,Morocco,Brazil — Morocco,1–0,1,Gana Brazil,0.4901179669662523,0.3482823176545332,0.1615997153792144,1–1,X,Empate,False,False,,Signo fallado
+7,WC-2026-014,2026-06-13,Grupos,Haiti,Scotland,Haiti — Scotland,0–1,2,Gana Scotland,0.1581509042791711,0.3467155362347209,0.4951335594861079,0–1,2,Gana Scotland,True,True,,Signo y marcador exacto
+8,WC-2026-020,2026-06-13,Grupos,Australia,Turkey,Australia — Turkey,0–1,2,Gana Turkey,0.1640785046678138,0.3135745389920089,0.5223469563401772,2–0,1,Gana Australia,False,False,,Signo fallado
+9,WC-2026-025,2026-06-14,Grupos,Curaçao,Germany,Curaçao — Germany,0–2,2,Gana Germany,0.0330029071721975,0.1578080764085634,0.8091890164192389,1–7,2,Gana Germany,True,False,,Signo acertado
+10,WC-2026-026,2026-06-14,Grupos,Ivory Coast,Ecuador,Ivory Coast — Ecuador,0–0,2,Gana Ecuador,0.2203594749901313,0.3442567773339881,0.4353837476758807,1–0,1,Gana Ivory Coast,False,False,,Signo fallado
+11,WC-2026-031,2026-06-14,Grupos,Japan,Netherlands,Japan — Netherlands,0–1,2,Gana Netherlands,0.0942215984488591,0.2690266683207929,0.636751733230348,2–2,X,Empate,False,False,,Signo fallado
+12,WC-2026-032,2026-06-14,Grupos,Sweden,Tunisia,Sweden — Tunisia,0–0,X,Empate,0.3646278483196822,0.4009477090502529,0.234424442630065,5–1,1,Gana Sweden,False,False,,Signo fallado
+13,WC-2026-037,2026-06-15,Grupos,Belgium,Egypt,Belgium — Egypt,0–0,1,Gana Belgium,0.429314097634542,0.3721613738127567,0.198524528552701,1–1,X,Empate,False,False,,Signo fallado
+14,WC-2026-038,2026-06-15,Grupos,Iran,New Zealand,Iran — New Zealand,0–0,X,Empate,0.2586504026693452,0.3862054022672691,0.3551441950633858,2–2,X,Empate,True,False,,Signo acertado
+15,WC-2026-043,2026-06-15,Grupos,Cape Verde,Spain,Cape Verde — Spain,0–1,2,Gana Spain,0.0751944463598429,0.2340394930770433,0.6907660605631137,0–0,X,Empate,False,False,,Signo fallado
+16,WC-2026-044,2026-06-15,Grupos,Saudi Arabia,Uruguay,Saudi Arabia — Uruguay,0–1,2,Gana Uruguay,0.1360980892547074,0.3098384573423613,0.5540634534029312,1–1,X,Empate,False,False,,Signo fallado
+17,WC-2026-049,2026-06-16,Grupos,France,Senegal,France — Senegal,0–0,X,Empate,0.3736033886623411,0.40889908514902,0.2174975261886388,3–1,1,Gana France,False,False,,Signo fallado
+18,WC-2026-050,2026-06-16,Grupos,Iraq,Norway,Iraq — Norway,0–1,2,Gana Norway,0.1351532026031532,0.2738468884372099,0.5909999089596369,1–4,2,Gana Norway,True,False,,Signo acertado
+19,WC-2026-055,2026-06-16,Grupos,Argentina,Algeria,Argentina — Algeria,0–0,1,Gana Argentina,0.4453007209474487,0.3736993612831606,0.1809999177693907,3–0,1,Gana Argentina,True,False,,Signo acertado
+20,WC-2026-056,2026-06-16,Grupos,Austria,Jordan,Austria — Jordan,1–0,1,Gana Austria,0.4654101287910733,0.3218659260918742,0.2127239451170524,3–1,1,Gana Austria,True,False,,Signo acertado
+21,WC-2026-061,2026-06-17,Grupos,DR Congo,Portugal,DR Congo — Portugal,0–2,2,Gana Portugal,0.0536813581704352,0.1545637066481063,0.7917549351814586,1–1,X,Empate,False,False,,Signo fallado
+22,WC-2026-062,2026-06-17,Grupos,Colombia,Uzbekistan,Colombia — Uzbekistan,1–0,1,Gana Colombia,0.4912004830841826,0.3158451281800174,0.1929543887357999,3–1,1,Gana Colombia,True,False,,Signo acertado
+23,WC-2026-067,2026-06-17,Grupos,England,Croatia,England — Croatia,0–0,X,Empate,0.3105174949120574,0.4062732850541579,0.2832092200337848,4–2,1,Gana England,False,False,,Signo fallado
+24,WC-2026-068,2026-06-17,Grupos,Ghana,Panama,Ghana — Panama,1–0,1,Gana Ghana,0.4435529807715155,0.3149565042606231,0.2414905149678612,1–0,1,Gana Ghana,True,True,,Signo y marcador exacto
+25,WC-2026-003,2026-06-18,Grupos,Czech Republic,South Africa,Czech Republic — South Africa,0–0,2,Gana South Africa,0.2675785864671516,0.3502541273498192,0.382167286183029,1–1,X,Empate,False,False,,Signo fallado
+26,WC-2026-004,2026-06-18,Grupos,Mexico,South Korea,Mexico — South Korea,0–0,X,Empate,0.326464475194291,0.4071765741161569,0.266358950689552,1–0,1,Gana Mexico,False,False,,Signo fallado
+27,WC-2026-009,2026-06-18,Grupos,Bosnia & Herzegovina,Switzerland,Bosnia & Herzegovina — Switzerland,0–1,2,Gana Switzerland,0.2087047953646644,0.341941849817451,0.4493533548178845,1–4,2,Gana Switzerland,True,False,,Signo acertado
+28,WC-2026-010,2026-06-18,Grupos,Canada,Qatar,Canada — Qatar,0–0,X,Empate,0.3270299039187639,0.3583425969131514,0.3146274991680847,6–0,1,Gana Canada,False,False,,Signo fallado
+29,WC-2026-015,2026-06-19,Grupos,Morocco,Scotland,Morocco — Scotland,0–0,2,Gana Scotland,0.189414127203072,0.364788187579285,0.4457976852176431,1–0,1,Gana Morocco,False,False,,Signo fallado
+30,WC-2026-016,2026-06-19,Grupos,Brazil,Haiti,Brazil — Haiti,2–0,1,Gana Brazil,0.7573328743551756,0.1768888436687747,0.0657782819760495,3–0,1,Gana Brazil,True,False,,Signo acertado
+31,WC-2026-021,2026-06-19,Grupos,United States,Australia,United States — Australia,0–0,X,Empate,0.3495583413980143,0.3867337597183903,0.2637078988835954,2–0,1,Gana United States,False,False,,Signo fallado
+32,WC-2026-022,2026-06-19,Grupos,Paraguay,Turkey,Paraguay — Turkey,0–0,2,Gana Turkey,0.2974149888838194,0.3461354603244855,0.356449550791695,1–0,1,Gana Paraguay,False,False,,Signo fallado
+33,WC-2026-027,2026-06-20,Grupos,Ivory Coast,Germany,Ivory Coast — Germany,0–2,2,Gana Germany,0.0399242026878372,0.1429300202811149,0.8171457770310477,1–2,2,Gana Germany,True,False,,Signo acertado
+34,WC-2026-028,2026-06-20,Grupos,Curaçao,Ecuador,Curaçao — Ecuador,0–1,2,Gana Ecuador,0.074998915843373,0.2219637003331566,0.7030373838234701,0–0,X,Empate,False,False,,Signo fallado
+35,WC-2026-033,2026-06-20,Grupos,Netherlands,Sweden,Netherlands — Sweden,0–0,2,Gana Sweden,0.2280571717777512,0.3739000048214724,0.3980428234007762,5–1,1,Gana Netherlands,False,False,,Signo fallado
+36,WC-2026-034,2026-06-20,Grupos,Japan,Tunisia,Japan — Tunisia,0–0,X,Empate,0.2326530685204669,0.38914642299035,0.378200508489183,4–0,1,Gana Japan,False,False,,Signo fallado
+37,WC-2026-039,2026-06-21,Grupos,Belgium,Iran,Belgium — Iran,0–0,1,Gana Belgium,0.4356059621229772,0.3486426806337099,0.2157513572433129,0–0,X,Empate,False,True,,Marcador exacto; signo fallado
+38,WC-2026-040,2026-06-21,Grupos,Egypt,New Zealand,Egypt — New Zealand,0–0,2,Gana New Zealand,0.2234798145395477,0.3768405863261627,0.3996795991342893,3–1,1,Gana Egypt,False,False,,Signo fallado
+39,WC-2026-045,2026-06-21,Grupos,Spain,Saudi Arabia,Spain — Saudi Arabia,1–0,1,Gana Spain,0.4636820940184894,0.3476252082637773,0.1886926977177332,4–0,1,Gana Spain,True,False,,Signo acertado
+40,WC-2026-046,2026-06-21,Grupos,Cape Verde,Uruguay,Cape Verde — Uruguay,0–0,2,Gana Uruguay,0.1566448460762817,0.4091244255110897,0.4342307284126286,2–2,X,Empate,False,False,,Signo fallado
+41,WC-2026-051,2026-06-22,Grupos,France,Iraq,France — Iraq,1–0,1,Gana France,0.6026794445610513,0.2822096173607893,0.1151109380781591,3–0,1,Gana France,True,False,,Signo acertado
+42,WC-2026-052,2026-06-22,Grupos,Norway,Senegal,Norway — Senegal,0–0,X,Empate,0.279992312983887,0.4036896932414748,0.3163179937746384,3–2,1,Gana Norway,False,False,,Signo fallado
+43,WC-2026-057,2026-06-22,Grupos,Argentina,Austria,Argentina — Austria,0–0,X,Empate,0.3471852783736645,0.3741361718194702,0.2786785498068653,2–0,1,Gana Argentina,False,False,,Signo fallado
+44,WC-2026-058,2026-06-22,Grupos,Algeria,Jordan,Algeria — Jordan,0–0,1,Gana Algeria,0.3760376566025117,0.3249500405925377,0.2990123028049508,2–1,1,Gana Algeria,True,False,,Signo acertado
+45,WC-2026-063,2026-06-23,Grupos,Portugal,Uzbekistan,Portugal — Uzbekistan,1–0,1,Gana Portugal,0.5522298937364825,0.2839154245020515,0.1638546817614659,5–0,1,Gana Portugal,True,False,,Signo acertado
+46,WC-2026-064,2026-06-23,Grupos,DR Congo,Colombia,DR Congo — Colombia,0–1,2,Gana Colombia,0.1023290999183689,0.2577926110138611,0.6398782890677701,0–1,2,Gana Colombia,True,True,,Signo y marcador exacto
+47,WC-2026-069,2026-06-23,Grupos,England,Ghana,England — Ghana,0–0,X,Empate,0.3760403570998328,0.3954101129504127,0.2285495299497546,0–0,X,Empate,True,True,,Signo y marcador exacto
+48,WC-2026-070,2026-06-23,Grupos,Croatia,Panama,Croatia — Panama,1–0,1,Gana Croatia,0.5294279778758909,0.2967720185427555,0.1738000035813535,1–0,1,Gana Croatia,True,True,,Signo y marcador exacto
+49,WC-2026-005,2026-06-24,Grupos,Mexico,Czech Republic,Mexico — Czech Republic,0–0,X,Empate,0.3626155011347601,0.3800246789958469,0.2573598198693929,3–0,1,Gana Mexico,False,False,,Signo fallado
+50,WC-2026-006,2026-06-24,Grupos,South Korea,South Africa,South Korea — South Africa,0–0,2,Gana South Africa,0.2332047334664836,0.3679389500456018,0.3988563164879147,0–1,2,Gana South Africa,True,False,,Signo acertado
+51,WC-2026-011,2026-06-24,Grupos,Canada,Switzerland,Canada — Switzerland,0–1,2,Gana Switzerland,0.1721156390333427,0.3408456171246832,0.487038743841974,1–2,2,Gana Switzerland,True,False,,Signo acertado
+52,WC-2026-012,2026-06-24,Grupos,Bosnia & Herzegovina,Qatar,Bosnia & Herzegovina — Qatar,1–0,1,Gana Bosnia & Herzegovina,0.4235839973768964,0.3334518448867339,0.2429641577363696,3–1,1,Gana Bosnia & Herzegovina,True,False,,Signo acertado
+53,WC-2026-017,2026-06-24,Grupos,Brazil,Scotland,Brazil — Scotland,0–0,1,Gana Brazil,0.4726379154570638,0.3546818880506014,0.1726801964923346,3–0,1,Gana Brazil,True,False,,Signo acertado
+54,WC-2026-018,2026-06-24,Grupos,Haiti,Morocco,Haiti — Morocco,0–1,2,Gana Morocco,0.1148327301160702,0.2891094188779664,0.5960578510059635,2–4,2,Gana Morocco,True,False,,Signo acertado
+55,WC-2026-023,2026-06-25,Grupos,United States,Turkey,United States — Turkey,0–0,X,Empate,0.3054976458958526,0.391011261891607,0.3034910922125403,2–3,2,Gana Turkey,False,False,,Signo fallado
+56,WC-2026-024,2026-06-25,Grupos,Australia,Paraguay,Australia — Paraguay,0–0,2,Gana Paraguay,0.2077686705427433,0.3605696497442717,0.431661679712985,0–0,X,Empate,False,True,,Marcador exacto; signo fallado
+57,WC-2026-029,2026-06-25,Grupos,Ivory Coast,Curaçao,Ivory Coast — Curaçao,0–0,1,Gana Ivory Coast,0.3522783970066906,0.3360563642027062,0.311665238790603,2–0,1,Gana Ivory Coast,True,False,,Signo acertado
+58,WC-2026-030,2026-06-25,Grupos,Germany,Ecuador,Germany — Ecuador,0–0,1,Gana Germany,0.4510403812662575,0.3778492977351828,0.1711103209985596,1–2,2,Gana Ecuador,False,False,,Signo fallado
+59,WC-2026-035,2026-06-25,Grupos,Japan,Sweden,Japan — Sweden,0–1,2,Gana Sweden,0.129130869290544,0.2971360064715904,0.5737331242378655,1–1,X,Empate,False,False,,Signo fallado
+60,WC-2026-036,2026-06-25,Grupos,Netherlands,Tunisia,Netherlands — Tunisia,0–0,1,Gana Netherlands,0.438120088546055,0.3807266291163243,0.1811532823376205,3–1,1,Gana Netherlands,True,False,,Signo acertado
+61,WC-2026-041,2026-06-26,Grupos,Egypt,Iran,Egypt — Iran,0–0,2,Gana Iran,0.2812666628615879,0.354416669903778,0.3643166672346342,1–1,X,Empate,False,False,,Signo fallado
+62,WC-2026-042,2026-06-26,Grupos,Belgium,New Zealand,Belgium — New Zealand,0–0,1,Gana Belgium,0.406643891106798,0.378833057216649,0.2145230516765532,5–1,1,Gana Belgium,True,False,,Signo acertado
+63,WC-2026-047,2026-06-26,Grupos,Cape Verde,Saudi Arabia,Cape Verde — Saudi Arabia,0–0,X,Empate,0.3149772036180181,0.4023151572104489,0.282707639171533,0–0,X,Empate,True,True,,Signo y marcador exacto
+64,WC-2026-048,2026-06-26,Grupos,Spain,Uruguay,Spain — Uruguay,0–0,X,Empate,0.2671124393295882,0.4113505700658427,0.3215369906045688,1–0,1,Gana Spain,False,False,,Signo fallado
+65,WC-2026-053,2026-06-26,Grupos,France,Norway,France — Norway,0–0,X,Empate,0.3159843519778546,0.3929101102822421,0.2911055377399031,4–1,1,Gana France,False,False,,Signo fallado
+66,WC-2026-054,2026-06-26,Grupos,Iraq,Senegal,Iraq — Senegal,0–1,2,Gana Senegal,0.1305672090479991,0.259832787177794,0.6096000037742069,0–5,2,Gana Senegal,True,False,,Signo acertado
+67,WC-2026-059,2026-06-27,Grupos,Austria,Algeria,Austria — Algeria,0–0,X,Empate,0.2885644117767394,0.3837178569233402,0.3277177312999203,3–3,X,Empate,True,False,,Signo acertado
+68,WC-2026-060,2026-06-27,Grupos,Argentina,Jordan,Argentina — Jordan,1–0,1,Gana Argentina,0.646699850842879,0.2510931764771397,0.1022069726799814,3–1,1,Gana Argentina,True,False,,Signo acertado
+69,WC-2026-065,2026-06-27,Grupos,Colombia,Portugal,Colombia — Portugal,0–0,2,Gana Portugal,0.2386819242947348,0.3421960050094184,0.4191220706958468,0–0,X,Empate,False,True,,Marcador exacto; signo fallado
+70,WC-2026-066,2026-06-27,Grupos,DR Congo,Uzbekistan,DR Congo — Uzbekistan,0–1,2,Gana Uzbekistan,0.2925712658636136,0.3147840917299245,0.3926446424064619,3–1,1,Gana DR Congo,False,False,,Signo fallado
+71,WC-2026-071,2026-06-27,Grupos,England,Panama,England — Panama,1–0,1,Gana England,0.6092394654852215,0.2788085492700787,0.1119519852446997,2–0,1,Gana England,True,False,,Signo acertado
+72,WC-2026-072,2026-06-27,Grupos,Ghana,Croatia,Ghana — Croatia,0–1,2,Gana Croatia,0.1559704433355429,0.3178231707619972,0.5262063859024597,1–2,2,Gana Croatia,True,False,,Signo acertado
+73,WC-2026-073,2026-06-28,Ronda de 32,Canada,South Africa,Canada — South Africa,0–0,X,Empate,0.2834600949836398,0.380037254427181,0.336502650589179,1–0,1,Gana Canada,False,False,,Signo fallado
+74,WC-2026-074,2026-06-29,Ronda de 32,Germany,Paraguay,Germany — Paraguay,0–0,1,Gana Germany,0.4590257251240659,0.3718778590213767,0.1690964158545573,1–1,X,Empate,False,False,Hubo penaltis después; no cuentan para el signo,Signo fallado
+75,WC-2026-075,2026-06-29,Ronda de 32,Morocco,Netherlands,Morocco — Netherlands,0–1,2,Gana Netherlands,0.0923661947150365,0.2442794383127712,0.6633543669721924,1–1,X,Empate,False,False,Hubo penaltis después; no cuentan para el signo,Signo fallado
+76,WC-2026-076,2026-06-29,Ronda de 32,Brazil,Japan,Brazil — Japan,1–0,1,Gana Brazil,0.5490077845330562,0.3011196122456344,0.1498726032213093,2–1,1,Gana Brazil,True,False,,Signo acertado
+77,WC-2026-077,2026-06-30,Ronda de 32,France,Sweden,France — Sweden,0–0,X,Empate,0.3083740025853054,0.3746491203778441,0.3169768770368506,3–0,1,Gana France,False,False,,Signo fallado
+78,WC-2026-078,2026-06-30,Ronda de 32,Ivory Coast,Norway,Ivory Coast — Norway,0–1,2,Gana Norway,0.1830804387783912,0.2959954752349081,0.5209240859867009,1–2,2,Gana Norway,True,False,,Signo acertado
+79,WC-2026-079,2026-06-30,Ronda de 32,Mexico,Ecuador,Mexico — Ecuador,0–0,X,Empate,0.3499612473737321,0.403077090071589,0.246961662554679,2–0,1,Gana Mexico,False,False,,Signo fallado
+80,WC-2026-080,2026-07-01,Ronda de 32,DR Congo,England,DR Congo — England,0–1,2,Gana England,0.0568894814022215,0.1798470305487357,0.7632634880490428,1–2,2,Gana England,True,False,,Signo acertado
+81,WC-2026-081,2026-07-01,Ronda de 32,United States,Bosnia & Herzegovina,United States — Bosnia & Herzegovina,0–0,X,Empate,0.3432983652962614,0.3599250213296511,0.2967766133740875,2–0,1,Gana United States,False,False,,Signo fallado
+82,WC-2026-082,2026-07-01,Ronda de 32,Belgium,Senegal,Belgium — Senegal,0–0,X,Empate,0.3554818612899244,0.3622175441619887,0.282300594548087,2–2,X,Empate,True,False,Hubo prórroga después; no cambia el signo a 90′,Signo acertado
+83,WC-2026-083,2026-07-02,Ronda de 32,Croatia,Portugal,Croatia — Portugal,0–1,2,Gana Portugal,0.219159700309633,0.3313808946869515,0.4494594050034152,1–2,2,Gana Portugal,True,False,,Signo acertado
+84,WC-2026-084,2026-07-02,Ronda de 32,Austria,Spain,Austria — Spain,0–1,2,Gana Spain,0.1727905021709247,0.3306573532303361,0.4965521445987392,0–3,2,Gana Spain,True,False,,Signo acertado
+85,WC-2026-085,2026-07-02,Ronda de 32,Switzerland,Algeria,Switzerland — Algeria,0–0,X,Empate,0.3490872455376388,0.3715231935044364,0.2793895609579248,2–0,1,Gana Switzerland,False,False,,Signo fallado
+86,WC-2026-086,2026-07-03,Ronda de 32,Argentina,Cape Verde,Argentina — Cape Verde,0–0,1,Gana Argentina,0.4545472384948978,0.3792595458387264,0.1661932156663756,1–1,X,Empate,False,False,Hubo prórroga después; no cambia el signo a 90′,Signo fallado
+87,WC-2026-087,2026-07-03,Ronda de 32,Colombia,Ghana,Colombia — Ghana,0–0,1,Gana Colombia,0.3829897223143074,0.3556934778662083,0.2613167998194842,1–0,1,Gana Colombia,True,False,,Signo acertado
+88,WC-2026-088,2026-07-03,Ronda de 32,Australia,Egypt,Australia — Egypt,0–0,2,Gana Egypt,0.2640057275924037,0.3480004212326867,0.3879938511749098,1–1,X,Empate,False,False,Hubo penaltis después; no cuentan para el signo,Signo fallado
+89,WC-2026-089,2026-07-04,Octavos,France,Paraguay,France — Paraguay,0–0,X,Empate,0.3982898407475133,0.402317090365209,0.1993930688872777,1–0,1,Gana France,False,False,,Signo fallado
+90,WC-2026-090,2026-07-04,Octavos,Canada,Morocco,Canada — Morocco,0–0,X,Empate,0.2597226644224647,0.3720213111689139,0.3682560244086212,0–3,2,Gana Morocco,False,False,,Signo fallado
+91,WC-2026-091,2026-07-05,Octavos,Brazil,Norway,Brazil — Norway,1–0,1,Gana Brazil,0.479745437954767,0.32239245143412,0.1978621106111129,1–2,2,Gana Norway,False,False,,Signo fallado
+92,WC-2026-092,2026-07-05,Octavos,Mexico,England,Mexico — England,0–0,2,Gana England,0.2056969895039842,0.3798912193912988,0.414411791104717,2–3,2,Gana England,True,False,,Signo acertado
+93,WC-2026-093,2026-07-06,Octavos,Spain,Portugal,Spain — Portugal,0–0,X,Empate,0.3057126901622334,0.374988674941338,0.3192986348964288,1–0,1,Gana Spain,False,False,,Signo fallado
+94,WC-2026-094,2026-07-06,Octavos,United States,Belgium,United States — Belgium,0–0,2,Gana Belgium,0.2177554397906106,0.3739123369424607,0.4083322232669283,1–4,2,Gana Belgium,True,False,,Signo acertado
+95,WC-2026-095,2026-07-07,Octavos,Argentina,Egypt,Argentina — Egypt,1–0,1,Gana Argentina,0.5129743538515696,0.325828764767656,0.1611968813807744,3–2,1,Gana Argentina,True,False,,Signo acertado
+96,WC-2026-096,2026-07-07,Octavos,Switzerland,Colombia,Switzerland — Colombia,0–0,X,Empate,0.309594463009241,0.3753670112305778,0.3150385257601812,0–0,X,Empate,True,True,Hubo penaltis después; no cuentan para el signo,Signo y marcador exacto
+97,WC-2026-097,2026-07-09,Cuartos,France,Morocco,France — Morocco,0–0,1,Gana France,0.3888899842680361,0.3837178828151314,0.2273921329168325,2–0,1,Gana France,True,False,,Signo acertado
+98,WC-2026-098,2026-07-10,Cuartos,Belgium,Spain,Belgium — Spain,0–0,2,Gana Spain,0.2202328072589221,0.3585631321450498,0.4212040605960282,1–2,2,Gana Spain,True,False,,Signo acertado
+99,WC-2026-099,2026-07-11,Cuartos,England,Norway,England — Norway,0–0,X,Empate,0.3557300527625703,0.3573166861685019,0.2869532610689279,1–1,X,Empate,True,False,Hubo prórroga después; no cambia el signo a 90′,Signo acertado
+100,WC-2026-100,2026-07-11,Cuartos,Argentina,Switzerland,Argentina — Switzerland,0–0,1,Gana Argentina,0.3748384564152429,0.3569971192356719,0.2681644243490853,1–1,X,Empate,False,False,Hubo prórroga después; no cambia el signo a 90′,Signo fallado
+101,WC-2026-101,2026-07-14,Semifinal,Spain,France,Spain — France,0–1,2,Gana France,0.1968450085363602,0.3340847254240432,0.4690702660395967,2–0,1,Gana Spain,False,False,,Signo fallado
+102,WC-2026-102,2026-07-15,Semifinal,Argentina,England,Argentina — England,0–0,X,Empate,0.2715283252538359,0.3713720102275478,0.3570996645186161,2–1,1,Gana Argentina,False,False,,Signo fallado
+103,WC-2026-103,2026-07-18,Tercer puesto,England,France,England — France,0–1,2,Gana France,0.1962425057371324,0.3290631916562971,0.4746943026065704,6–4,1,Gana England,False,False,,Signo fallado
+104,WC-2026-104,2026-07-19,Final,Argentina,Spain,Argentina — Spain,0–0,2,Gana Spain,0.2714258433649821,0.3476168945932864,0.3809572620417315,0–0,X,Empate,False,True,Hubo prórroga después; no cambia el signo a 90′,Marcador exacto; signo fallado

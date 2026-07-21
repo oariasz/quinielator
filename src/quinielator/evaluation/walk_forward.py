@@ -8,6 +8,7 @@ from typing import Any
 import pandas as pd
 
 from quinielator.config import ApplicationConfig
+from quinielator.domain import MatchSign
 from quinielator.evaluation.metrics import MetricsCalculator
 from quinielator.features import TemporalDatasetBuilder
 from quinielator.models import BatchPrediction, ModelRegistry, PredictionModel
@@ -65,6 +66,9 @@ class WorldCupEvaluator:
                 else str(row["away_team_code"])
             )
             match_date = pd.Timestamp(row["match_date"])
+            actual_outcome = str(row["target_outcome"])
+            predicted_sign = MatchSign.from_outcome(predicted_outcome).value
+            actual_sign = MatchSign.from_outcome(actual_outcome).value
             records.append(
                 {
                     "match_id": str(row["match_id"]),
@@ -85,6 +89,7 @@ class WorldCupEvaluator:
                     "probability_draw": float(output.probability_draw[position]),
                     "probability_away": away_probability,
                     "predicted_outcome": predicted_outcome,
+                    "predicted_sign": predicted_sign,
                     "predicted_advancing_team": predicted_advancing,
                     "actual_home_goals": int(row["home_goals_90"]),
                     "actual_away_goals": int(row["away_goals_90"]),
@@ -92,7 +97,9 @@ class WorldCupEvaluator:
                     "actual_away_goals_total": int(row["away_goals_total"]),
                     "actual_home_penalties": int(row["home_penalties"]),
                     "actual_away_penalties": int(row["away_penalties"]),
-                    "actual_outcome": str(row["target_outcome"]),
+                    "actual_outcome": actual_outcome,
+                    "actual_sign": actual_sign,
+                    "sign_correct": int(predicted_sign == actual_sign),
                     "actual_advancing_team": str(row["actual_advancing_team"]),
                     "penalty_shootout": int(row["penalty_shootout"]),
                     "fifa_ranking_available": float(row["fifa_ranking_available"]),

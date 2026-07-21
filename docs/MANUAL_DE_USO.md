@@ -62,7 +62,8 @@ La preparación crea:
 
 - `data/processed/matches.csv`: partidos normalizados;
 - `data/processed/rankings.csv`: publicaciones FIFA normalizadas;
-- `data/processed/features.csv`: 58 variables calculadas antes de cada partido.
+- `data/processed/features.csv`: variables calculadas antes de cada partido; 68 columnas
+  numéricas son entregadas al modelo y otras quedan como metadatos auditables.
 
 Con las fuentes actuales deben aparecer 1.068 partidos y 23 ediciones, de 1930 a 2026.
 
@@ -113,6 +114,7 @@ reporte histórico completo.
 
 ```bash
 python -m quinielator report --model ensemble
+python -m quinielator report --model ensemble --world-cup 2026 --publish-docs
 ```
 
 En `reports/` encontrarás:
@@ -126,6 +128,10 @@ En `reports/` encontrarás:
 - `calibration_ensemble.csv`: confianza declarada frente a acierto observado;
 - `model_comparison.csv` y `.md`: comparación de todos los modelos evaluados.
 
+Con `--world-cup 2026` también se crean una tabla completa CSV/Markdown/HTML y un resumen
+SVG. `--publish-docs` copia esos cuatro artefactos a `docs/resultados-2026/`; no inicia
+un servidor ni publica nada fuera del repositorio.
+
 Interpretación:
 
 - `outcome_accuracy`: proporción de H/D/A acertados;
@@ -138,7 +144,23 @@ Interpretación:
 - `advancing_accuracy`: selección que avanzó acertada;
 - `fifa_ranking_coverage`: partidos con ranking válido para ambos equipos.
 
-## 7. Jugar con la predicción interactiva
+## 7. Analizar qué variables influyeron
+
+```bash
+python -m quinielator analyze-features \
+  --model ensemble \
+  --world-cup 2026 \
+  --repeats 5 \
+  --publish-docs
+```
+
+El comando entrena exclusivamente con Mundiales anteriores, mide el log loss de 2026 y
+permuta cada variable y familia cinco veces. Produce dos CSV, un informe Markdown y un
+gráfico SVG. Un aumento positivo del log loss indica que romper la señal perjudicó la
+predicción. Es importancia predictiva posterior, no causalidad; variables correlacionadas
+pueden repartirse el aporte.
+
+## 8. Jugar con la predicción interactiva
 
 Finales, semifinales y cuartos:
 
@@ -153,8 +175,8 @@ También acepta `semifinals`, `semis`, el error frecuente `seminfinal`, `quarter
 
 Flujo de cada partido:
 
-1. Ves marcador predicho, goles esperados y probabilidades.
-2. Pulsas Enter y aparece el resultado real.
+1. Ves marcador predicho, signo y probabilidades (`1` primero, `X` empate, `2` segundo).
+2. Pulsas Enter y aparecen el resultado y signo reales a 90 minutos.
 3. Ves si acertó 1X2, selección que avanzó y marcador exacto.
 4. Pulsas Enter para continuar; escribe `q` en cualquier pausa para salir.
 5. Al acabar esa fase, ves las métricas de todos los partidos del Mundial.
@@ -172,7 +194,7 @@ python -m quinielator predict --world-cup 2026 --stage final --model ensemble
 python -m quinielator predict --world-cup 2026 --stage cuartos --model ensemble
 ```
 
-## 8. Usar `print_predictions` desde Python
+## 9. Usar `print_predictions` desde Python
 
 Abre `python` con el entorno activo:
 
@@ -196,7 +218,7 @@ print_predictions(
 )
 ```
 
-## 9. Reproducir las comprobaciones
+## 10. Reproducir las comprobaciones
 
 ```bash
 ruff check .
@@ -207,9 +229,10 @@ pytest
 
 Las pruebas no descargan Internet. Cubren Elo, ranking estrictamente anterior,
 caducidad del ranking, ausencia de fuga temporal, scores y probabilidades, penaltis,
-serialización, aliases de fases y la pausa interactiva.
+serialización, aliases de fases, signos, reporte visual, análisis temporal de variables y
+la pausa interactiva.
 
-## 10. Errores frecuentes
+## 11. Errores frecuentes
 
 `Falta data/raw/...`
 : Ejecuta `data download`, luego `data validate` y `data prepare`.
@@ -231,7 +254,7 @@ La precisión baja en un Mundial
 : No es un error. Los estilos, formatos y distribuciones cambian; más datos no garantizan
   una mejora monótona.
 
-## 11. Cambiar parámetros
+## 12. Cambiar parámetros
 
 Edita `config/default.toml` para variar la ventana de forma, Elo, máximo de goles,
 semilla, mínimo de entrenamiento y épocas de Keras. Después vuelve a ejecutar

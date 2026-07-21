@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predicciones Mundial 2026 — ensemble</title>
+<style>
+:root{--green:#16a34a;--green-bg:#ecfdf5;--red:#dc2626;--red-bg:#fef2f2;
+--blue:#2563eb;--ink:#172033;--muted:#657084;--line:#dce2ea}
+*{box-sizing:border-box} body{font-family:Inter,system-ui,-apple-system,sans-serif;
+margin:0;background:#f4f7fb;color:var(--ink)} main{max-width:1500px;margin:auto;padding:32px}
+h1{margin:0 0 8px} .subtitle{color:var(--muted);margin-bottom:24px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px;margin:20px 0}
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}
+.value{font-size:30px;font-weight:800} .label{color:var(--muted);font-size:13px}
+.bar{height:28px;background:var(--red);border-radius:10px;overflow:hidden;margin:18px 0 8px}
+.bar span{display:block;height:100%;width:45.192%;background:var(--green)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:20px;color:var(--muted)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px}
+.table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:1180px;font-size:13px}
+th{position:sticky;top:0;background:#172033;color:white;padding:12px 9px;text-align:left}
+td{border-bottom:1px solid var(--line);padding:10px 9px;vertical-align:middle}
+tr.hit{background:var(--green-bg);border-left:6px solid var(--green)}
+tr.miss{background:var(--red-bg);border-left:6px solid var(--red)}
+tr.exact{background:#dcfce7} .score{font-size:20px;font-weight:800;text-align:center}
+.sign{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;
+background:#172033;color:white;font-size:17px;font-weight:800} .prob{white-space:nowrap}
+.note{font-size:11px;color:var(--muted);margin-top:5px;max-width:180px}
+@media(max-width:800px){main{padding:18px}.cards{grid-template-columns:1fr 1fr}}
+</style></head><body><main>
+<h1>Mundial 2026: predicción vs. resultado real</h1>
+<p class="subtitle">Modelo <strong>ensemble</strong> · Signos 1/X/2 y marcadores
+evaluados a 90 minutos. Prórroga y penaltis posteriores no modifican el resultado.</p>
+<section class="cards">
+<div class="card"><div class="value">47/104</div>
+<div class="label">signos acertados</div></div>
+<div class="card"><div class="value">45.2%</div>
+<div class="label">accuracy 1/X/2</div></div>
+<div class="card"><div class="value">11</div>
+<div class="label">marcadores exactos</div></div>
+<div class="card"><div class="value">4</div>
+<div class="label">tandas posteriores ignoradas</div></div>
+</section>
+<div class="bar" title="Verde: aciertos; rojo: fallos"><span></span></div>
+<div class="legend"><span><i class="dot" style="background:var(--green)"></i>Acierto</span>
+<span><i class="dot" style="background:var(--red)"></i>Fallo</span>
+<span>🎯 Signo y marcador exacto</span></div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Fecha</th><th>Fase</th>
+<th>Partido</th><th>Pred.</th><th>Signo predicho</th><th>Probabilidades</th>
+<th>Real 90′</th><th>Signo real</th><th>Evaluación</th></tr></thead>
+<tbody><tr class="miss">
+<td>1</td><td>2026-06-11</td>
+<td>Grupos</td>
+<td><strong>Mexico</strong><br>vs.<br>
+<strong>South Africa</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 31.3%<br>
+X: 41.7%<br>2: 27.1%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Mexico</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>2</td><td>2026-06-11</td>
+<td>Grupos</td>
+<td><strong>Czech Republic</strong><br>vs.<br>
+<strong>South Korea</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana South Korea</td>
+<td class="prob">1: 29.5%<br>
+X: 34.9%<br>2: 35.6%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana South Korea</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>3</td><td>2026-06-12</td>
+<td>Grupos</td>
+<td><strong>Canada</strong><br>vs.<br>
+<strong>Bosnia &amp; Herzegovina</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Bosnia &amp; Herzegovina</td>
+<td class="prob">1: 20.9%<br>
+X: 32.7%<br>2: 46.4%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>4</td><td>2026-06-12</td>
+<td>Grupos</td>
+<td><strong>United States</strong><br>vs.<br>
+<strong>Paraguay</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 26.8%<br>
+X: 43.1%<br>2: 30.1%</td>
+<td class="score">4–1</td>
+<td><span class="sign">1</span><br>
+Gana United States</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>5</td><td>2026-06-13</td>
+<td>Grupos</td>
+<td><strong>Switzerland</strong><br>vs.<br>
+<strong>Qatar</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Switzerland</td>
+<td class="prob">1: 50.0%<br>
+X: 31.4%<br>2: 18.6%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>6</td><td>2026-06-13</td>
+<td>Grupos</td>
+<td><strong>Brazil</strong><br>vs.<br>
+<strong>Morocco</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td class="prob">1: 49.0%<br>
+X: 34.8%<br>2: 16.2%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit exact">
+<td>7</td><td>2026-06-13</td>
+<td>Grupos</td>
+<td><strong>Haiti</strong><br>vs.<br>
+<strong>Scotland</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Scotland</td>
+<td class="prob">1: 15.8%<br>
+X: 34.7%<br>2: 49.5%</td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Scotland</td>
+<td><strong>🎯 Signo y marcador exactos</strong></td>
+</tr><tr class="miss">
+<td>8</td><td>2026-06-13</td>
+<td>Grupos</td>
+<td><strong>Australia</strong><br>vs.<br>
+<strong>Turkey</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Turkey</td>
+<td class="prob">1: 16.4%<br>
+X: 31.4%<br>2: 52.2%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Australia</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>9</td><td>2026-06-14</td>
+<td>Grupos</td>
+<td><strong>Curaçao</strong><br>vs.<br>
+<strong>Germany</strong></td>
+<td class="score">0–2</td>
+<td><span class="sign">2</span><br>
+Gana Germany</td>
+<td class="prob">1: 3.3%<br>
+X: 15.8%<br>2: 80.9%</td>
+<td class="score">1–7</td>
+<td><span class="sign">2</span><br>
+Gana Germany</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>10</td><td>2026-06-14</td>
+<td>Grupos</td>
+<td><strong>Ivory Coast</strong><br>vs.<br>
+<strong>Ecuador</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Ecuador</td>
+<td class="prob">1: 22.0%<br>
+X: 34.4%<br>2: 43.5%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Ivory Coast</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>11</td><td>2026-06-14</td>
+<td>Grupos</td>
+<td><strong>Japan</strong><br>vs.<br>
+<strong>Netherlands</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Netherlands</td>
+<td class="prob">1: 9.4%<br>
+X: 26.9%<br>2: 63.7%</td>
+<td class="score">2–2</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>12</td><td>2026-06-14</td>
+<td>Grupos</td>
+<td><strong>Sweden</strong><br>vs.<br>
+<strong>Tunisia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 36.5%<br>
+X: 40.1%<br>2: 23.4%</td>
+<td class="score">5–1</td>
+<td><span class="sign">1</span><br>
+Gana Sweden</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>13</td><td>2026-06-15</td>
+<td>Grupos</td>
+<td><strong>Belgium</strong><br>vs.<br>
+<strong>Egypt</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Belgium</td>
+<td class="prob">1: 42.9%<br>
+X: 37.2%<br>2: 19.9%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>14</td><td>2026-06-15</td>
+<td>Grupos</td>
+<td><strong>Iran</strong><br>vs.<br>
+<strong>New Zealand</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 25.9%<br>
+X: 38.6%<br>2: 35.5%</td>
+<td class="score">2–2</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>15</td><td>2026-06-15</td>
+<td>Grupos</td>
+<td><strong>Cape Verde</strong><br>vs.<br>
+<strong>Spain</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Spain</td>
+<td class="prob">1: 7.5%<br>
+X: 23.4%<br>2: 69.1%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>16</td><td>2026-06-15</td>
+<td>Grupos</td>
+<td><strong>Saudi Arabia</strong><br>vs.<br>
+<strong>Uruguay</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Uruguay</td>
+<td class="prob">1: 13.6%<br>
+X: 31.0%<br>2: 55.4%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>17</td><td>2026-06-16</td>
+<td>Grupos</td>
+<td><strong>France</strong><br>vs.<br>
+<strong>Senegal</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 37.4%<br>
+X: 40.9%<br>2: 21.7%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>18</td><td>2026-06-16</td>
+<td>Grupos</td>
+<td><strong>Iraq</strong><br>vs.<br>
+<strong>Norway</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Norway</td>
+<td class="prob">1: 13.5%<br>
+X: 27.4%<br>2: 59.1%</td>
+<td class="score">1–4</td>
+<td><span class="sign">2</span><br>
+Gana Norway</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>19</td><td>2026-06-16</td>
+<td>Grupos</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Algeria</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td class="prob">1: 44.5%<br>
+X: 37.4%<br>2: 18.1%</td>
+<td class="score">3–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>20</td><td>2026-06-16</td>
+<td>Grupos</td>
+<td><strong>Austria</strong><br>vs.<br>
+<strong>Jordan</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Austria</td>
+<td class="prob">1: 46.5%<br>
+X: 32.2%<br>2: 21.3%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana Austria</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>21</td><td>2026-06-17</td>
+<td>Grupos</td>
+<td><strong>DR Congo</strong><br>vs.<br>
+<strong>Portugal</strong></td>
+<td class="score">0–2</td>
+<td><span class="sign">2</span><br>
+Gana Portugal</td>
+<td class="prob">1: 5.4%<br>
+X: 15.5%<br>2: 79.2%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>22</td><td>2026-06-17</td>
+<td>Grupos</td>
+<td><strong>Colombia</strong><br>vs.<br>
+<strong>Uzbekistan</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Colombia</td>
+<td class="prob">1: 49.1%<br>
+X: 31.6%<br>2: 19.3%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana Colombia</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>23</td><td>2026-06-17</td>
+<td>Grupos</td>
+<td><strong>England</strong><br>vs.<br>
+<strong>Croatia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 31.1%<br>
+X: 40.6%<br>2: 28.3%</td>
+<td class="score">4–2</td>
+<td><span class="sign">1</span><br>
+Gana England</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit exact">
+<td>24</td><td>2026-06-17</td>
+<td>Grupos</td>
+<td><strong>Ghana</strong><br>vs.<br>
+<strong>Panama</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Ghana</td>
+<td class="prob">1: 44.4%<br>
+X: 31.5%<br>2: 24.1%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Ghana</td>
+<td><strong>🎯 Signo y marcador exactos</strong></td>
+</tr><tr class="miss">
+<td>25</td><td>2026-06-18</td>
+<td>Grupos</td>
+<td><strong>Czech Republic</strong><br>vs.<br>
+<strong>South Africa</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana South Africa</td>
+<td class="prob">1: 26.8%<br>
+X: 35.0%<br>2: 38.2%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>26</td><td>2026-06-18</td>
+<td>Grupos</td>
+<td><strong>Mexico</strong><br>vs.<br>
+<strong>South Korea</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 32.6%<br>
+X: 40.7%<br>2: 26.6%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Mexico</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>27</td><td>2026-06-18</td>
+<td>Grupos</td>
+<td><strong>Bosnia &amp; Herzegovina</strong><br>vs.<br>
+<strong>Switzerland</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Switzerland</td>
+<td class="prob">1: 20.9%<br>
+X: 34.2%<br>2: 44.9%</td>
+<td class="score">1–4</td>
+<td><span class="sign">2</span><br>
+Gana Switzerland</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>28</td><td>2026-06-18</td>
+<td>Grupos</td>
+<td><strong>Canada</strong><br>vs.<br>
+<strong>Qatar</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 32.7%<br>
+X: 35.8%<br>2: 31.5%</td>
+<td class="score">6–0</td>
+<td><span class="sign">1</span><br>
+Gana Canada</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>29</td><td>2026-06-19</td>
+<td>Grupos</td>
+<td><strong>Morocco</strong><br>vs.<br>
+<strong>Scotland</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Scotland</td>
+<td class="prob">1: 18.9%<br>
+X: 36.5%<br>2: 44.6%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Morocco</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>30</td><td>2026-06-19</td>
+<td>Grupos</td>
+<td><strong>Brazil</strong><br>vs.<br>
+<strong>Haiti</strong></td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td class="prob">1: 75.7%<br>
+X: 17.7%<br>2: 6.6%</td>
+<td class="score">3–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>31</td><td>2026-06-19</td>
+<td>Grupos</td>
+<td><strong>United States</strong><br>vs.<br>
+<strong>Australia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 35.0%<br>
+X: 38.7%<br>2: 26.4%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana United States</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>32</td><td>2026-06-19</td>
+<td>Grupos</td>
+<td><strong>Paraguay</strong><br>vs.<br>
+<strong>Turkey</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Turkey</td>
+<td class="prob">1: 29.7%<br>
+X: 34.6%<br>2: 35.6%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Paraguay</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>33</td><td>2026-06-20</td>
+<td>Grupos</td>
+<td><strong>Ivory Coast</strong><br>vs.<br>
+<strong>Germany</strong></td>
+<td class="score">0–2</td>
+<td><span class="sign">2</span><br>
+Gana Germany</td>
+<td class="prob">1: 4.0%<br>
+X: 14.3%<br>2: 81.7%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Germany</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>34</td><td>2026-06-20</td>
+<td>Grupos</td>
+<td><strong>Curaçao</strong><br>vs.<br>
+<strong>Ecuador</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Ecuador</td>
+<td class="prob">1: 7.5%<br>
+X: 22.2%<br>2: 70.3%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>35</td><td>2026-06-20</td>
+<td>Grupos</td>
+<td><strong>Netherlands</strong><br>vs.<br>
+<strong>Sweden</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Sweden</td>
+<td class="prob">1: 22.8%<br>
+X: 37.4%<br>2: 39.8%</td>
+<td class="score">5–1</td>
+<td><span class="sign">1</span><br>
+Gana Netherlands</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>36</td><td>2026-06-20</td>
+<td>Grupos</td>
+<td><strong>Japan</strong><br>vs.<br>
+<strong>Tunisia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 23.3%<br>
+X: 38.9%<br>2: 37.8%</td>
+<td class="score">4–0</td>
+<td><span class="sign">1</span><br>
+Gana Japan</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss exact-score">
+<td>37</td><td>2026-06-21</td>
+<td>Grupos</td>
+<td><strong>Belgium</strong><br>vs.<br>
+<strong>Iran</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Belgium</td>
+<td class="prob">1: 43.6%<br>
+X: 34.9%<br>2: 21.6%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado · marcador exacto</strong></td>
+</tr><tr class="miss">
+<td>38</td><td>2026-06-21</td>
+<td>Grupos</td>
+<td><strong>Egypt</strong><br>vs.<br>
+<strong>New Zealand</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana New Zealand</td>
+<td class="prob">1: 22.3%<br>
+X: 37.7%<br>2: 40.0%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana Egypt</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>39</td><td>2026-06-21</td>
+<td>Grupos</td>
+<td><strong>Spain</strong><br>vs.<br>
+<strong>Saudi Arabia</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Spain</td>
+<td class="prob">1: 46.4%<br>
+X: 34.8%<br>2: 18.9%</td>
+<td class="score">4–0</td>
+<td><span class="sign">1</span><br>
+Gana Spain</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>40</td><td>2026-06-21</td>
+<td>Grupos</td>
+<td><strong>Cape Verde</strong><br>vs.<br>
+<strong>Uruguay</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Uruguay</td>
+<td class="prob">1: 15.7%<br>
+X: 40.9%<br>2: 43.4%</td>
+<td class="score">2–2</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>41</td><td>2026-06-22</td>
+<td>Grupos</td>
+<td><strong>France</strong><br>vs.<br>
+<strong>Iraq</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td class="prob">1: 60.3%<br>
+X: 28.2%<br>2: 11.5%</td>
+<td class="score">3–0</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>42</td><td>2026-06-22</td>
+<td>Grupos</td>
+<td><strong>Norway</strong><br>vs.<br>
+<strong>Senegal</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 28.0%<br>
+X: 40.4%<br>2: 31.6%</td>
+<td class="score">3–2</td>
+<td><span class="sign">1</span><br>
+Gana Norway</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>43</td><td>2026-06-22</td>
+<td>Grupos</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Austria</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 34.7%<br>
+X: 37.4%<br>2: 27.9%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>44</td><td>2026-06-22</td>
+<td>Grupos</td>
+<td><strong>Algeria</strong><br>vs.<br>
+<strong>Jordan</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Algeria</td>
+<td class="prob">1: 37.6%<br>
+X: 32.5%<br>2: 29.9%</td>
+<td class="score">2–1</td>
+<td><span class="sign">1</span><br>
+Gana Algeria</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>45</td><td>2026-06-23</td>
+<td>Grupos</td>
+<td><strong>Portugal</strong><br>vs.<br>
+<strong>Uzbekistan</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Portugal</td>
+<td class="prob">1: 55.2%<br>
+X: 28.4%<br>2: 16.4%</td>
+<td class="score">5–0</td>
+<td><span class="sign">1</span><br>
+Gana Portugal</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit exact">
+<td>46</td><td>2026-06-23</td>
+<td>Grupos</td>
+<td><strong>DR Congo</strong><br>vs.<br>
+<strong>Colombia</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Colombia</td>
+<td class="prob">1: 10.2%<br>
+X: 25.8%<br>2: 64.0%</td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Colombia</td>
+<td><strong>🎯 Signo y marcador exactos</strong></td>
+</tr><tr class="hit exact">
+<td>47</td><td>2026-06-23</td>
+<td>Grupos</td>
+<td><strong>England</strong><br>vs.<br>
+<strong>Ghana</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 37.6%<br>
+X: 39.5%<br>2: 22.9%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>🎯 Signo y marcador exactos</strong></td>
+</tr><tr class="hit exact">
+<td>48</td><td>2026-06-23</td>
+<td>Grupos</td>
+<td><strong>Croatia</strong><br>vs.<br>
+<strong>Panama</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Croatia</td>
+<td class="prob">1: 52.9%<br>
+X: 29.7%<br>2: 17.4%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Croatia</td>
+<td><strong>🎯 Signo y marcador exactos</strong></td>
+</tr><tr class="miss">
+<td>49</td><td>2026-06-24</td>
+<td>Grupos</td>
+<td><strong>Mexico</strong><br>vs.<br>
+<strong>Czech Republic</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 36.3%<br>
+X: 38.0%<br>2: 25.7%</td>
+<td class="score">3–0</td>
+<td><span class="sign">1</span><br>
+Gana Mexico</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>50</td><td>2026-06-24</td>
+<td>Grupos</td>
+<td><strong>South Korea</strong><br>vs.<br>
+<strong>South Africa</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana South Africa</td>
+<td class="prob">1: 23.3%<br>
+X: 36.8%<br>2: 39.9%</td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana South Africa</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>51</td><td>2026-06-24</td>
+<td>Grupos</td>
+<td><strong>Canada</strong><br>vs.<br>
+<strong>Switzerland</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Switzerland</td>
+<td class="prob">1: 17.2%<br>
+X: 34.1%<br>2: 48.7%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Switzerland</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>52</td><td>2026-06-24</td>
+<td>Grupos</td>
+<td><strong>Bosnia &amp; Herzegovina</strong><br>vs.<br>
+<strong>Qatar</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Bosnia &amp; Herzegovina</td>
+<td class="prob">1: 42.4%<br>
+X: 33.3%<br>2: 24.3%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana Bosnia &amp; Herzegovina</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>53</td><td>2026-06-24</td>
+<td>Grupos</td>
+<td><strong>Brazil</strong><br>vs.<br>
+<strong>Scotland</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td class="prob">1: 47.3%<br>
+X: 35.5%<br>2: 17.3%</td>
+<td class="score">3–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>54</td><td>2026-06-24</td>
+<td>Grupos</td>
+<td><strong>Haiti</strong><br>vs.<br>
+<strong>Morocco</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Morocco</td>
+<td class="prob">1: 11.5%<br>
+X: 28.9%<br>2: 59.6%</td>
+<td class="score">2–4</td>
+<td><span class="sign">2</span><br>
+Gana Morocco</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>55</td><td>2026-06-25</td>
+<td>Grupos</td>
+<td><strong>United States</strong><br>vs.<br>
+<strong>Turkey</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 30.5%<br>
+X: 39.1%<br>2: 30.3%</td>
+<td class="score">2–3</td>
+<td><span class="sign">2</span><br>
+Gana Turkey</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss exact-score">
+<td>56</td><td>2026-06-25</td>
+<td>Grupos</td>
+<td><strong>Australia</strong><br>vs.<br>
+<strong>Paraguay</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Paraguay</td>
+<td class="prob">1: 20.8%<br>
+X: 36.1%<br>2: 43.2%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado · marcador exacto</strong></td>
+</tr><tr class="hit">
+<td>57</td><td>2026-06-25</td>
+<td>Grupos</td>
+<td><strong>Ivory Coast</strong><br>vs.<br>
+<strong>Curaçao</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Ivory Coast</td>
+<td class="prob">1: 35.2%<br>
+X: 33.6%<br>2: 31.2%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Ivory Coast</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>58</td><td>2026-06-25</td>
+<td>Grupos</td>
+<td><strong>Germany</strong><br>vs.<br>
+<strong>Ecuador</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Germany</td>
+<td class="prob">1: 45.1%<br>
+X: 37.8%<br>2: 17.1%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Ecuador</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>59</td><td>2026-06-25</td>
+<td>Grupos</td>
+<td><strong>Japan</strong><br>vs.<br>
+<strong>Sweden</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Sweden</td>
+<td class="prob">1: 12.9%<br>
+X: 29.7%<br>2: 57.4%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>60</td><td>2026-06-25</td>
+<td>Grupos</td>
+<td><strong>Netherlands</strong><br>vs.<br>
+<strong>Tunisia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Netherlands</td>
+<td class="prob">1: 43.8%<br>
+X: 38.1%<br>2: 18.1%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana Netherlands</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>61</td><td>2026-06-26</td>
+<td>Grupos</td>
+<td><strong>Egypt</strong><br>vs.<br>
+<strong>Iran</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Iran</td>
+<td class="prob">1: 28.1%<br>
+X: 35.4%<br>2: 36.4%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>62</td><td>2026-06-26</td>
+<td>Grupos</td>
+<td><strong>Belgium</strong><br>vs.<br>
+<strong>New Zealand</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Belgium</td>
+<td class="prob">1: 40.7%<br>
+X: 37.9%<br>2: 21.5%</td>
+<td class="score">5–1</td>
+<td><span class="sign">1</span><br>
+Gana Belgium</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit exact">
+<td>63</td><td>2026-06-26</td>
+<td>Grupos</td>
+<td><strong>Cape Verde</strong><br>vs.<br>
+<strong>Saudi Arabia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 31.5%<br>
+X: 40.2%<br>2: 28.3%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>🎯 Signo y marcador exactos</strong></td>
+</tr><tr class="miss">
+<td>64</td><td>2026-06-26</td>
+<td>Grupos</td>
+<td><strong>Spain</strong><br>vs.<br>
+<strong>Uruguay</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 26.7%<br>
+X: 41.1%<br>2: 32.2%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Spain</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>65</td><td>2026-06-26</td>
+<td>Grupos</td>
+<td><strong>France</strong><br>vs.<br>
+<strong>Norway</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 31.6%<br>
+X: 39.3%<br>2: 29.1%</td>
+<td class="score">4–1</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>66</td><td>2026-06-26</td>
+<td>Grupos</td>
+<td><strong>Iraq</strong><br>vs.<br>
+<strong>Senegal</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Senegal</td>
+<td class="prob">1: 13.1%<br>
+X: 26.0%<br>2: 61.0%</td>
+<td class="score">0–5</td>
+<td><span class="sign">2</span><br>
+Gana Senegal</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>67</td><td>2026-06-27</td>
+<td>Grupos</td>
+<td><strong>Austria</strong><br>vs.<br>
+<strong>Algeria</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 28.9%<br>
+X: 38.4%<br>2: 32.8%</td>
+<td class="score">3–3</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>68</td><td>2026-06-27</td>
+<td>Grupos</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Jordan</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td class="prob">1: 64.7%<br>
+X: 25.1%<br>2: 10.2%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss exact-score">
+<td>69</td><td>2026-06-27</td>
+<td>Grupos</td>
+<td><strong>Colombia</strong><br>vs.<br>
+<strong>Portugal</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Portugal</td>
+<td class="prob">1: 23.9%<br>
+X: 34.2%<br>2: 41.9%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado · marcador exacto</strong></td>
+</tr><tr class="miss">
+<td>70</td><td>2026-06-27</td>
+<td>Grupos</td>
+<td><strong>DR Congo</strong><br>vs.<br>
+<strong>Uzbekistan</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Uzbekistan</td>
+<td class="prob">1: 29.3%<br>
+X: 31.5%<br>2: 39.3%</td>
+<td class="score">3–1</td>
+<td><span class="sign">1</span><br>
+Gana DR Congo</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>71</td><td>2026-06-27</td>
+<td>Grupos</td>
+<td><strong>England</strong><br>vs.<br>
+<strong>Panama</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana England</td>
+<td class="prob">1: 60.9%<br>
+X: 27.9%<br>2: 11.2%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana England</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>72</td><td>2026-06-27</td>
+<td>Grupos</td>
+<td><strong>Ghana</strong><br>vs.<br>
+<strong>Croatia</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Croatia</td>
+<td class="prob">1: 15.6%<br>
+X: 31.8%<br>2: 52.6%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Croatia</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>73</td><td>2026-06-28</td>
+<td>Ronda de 32</td>
+<td><strong>Canada</strong><br>vs.<br>
+<strong>South Africa</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 28.3%<br>
+X: 38.0%<br>2: 33.7%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Canada</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>74</td><td>2026-06-29</td>
+<td>Ronda de 32</td>
+<td><strong>Germany</strong><br>vs.<br>
+<strong>Paraguay</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Germany</td>
+<td class="prob">1: 45.9%<br>
+X: 37.2%<br>2: 16.9%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong><div class="note">Hubo penaltis después; no cuentan para el signo</div></td>
+</tr><tr class="miss">
+<td>75</td><td>2026-06-29</td>
+<td>Ronda de 32</td>
+<td><strong>Morocco</strong><br>vs.<br>
+<strong>Netherlands</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Netherlands</td>
+<td class="prob">1: 9.2%<br>
+X: 24.4%<br>2: 66.3%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong><div class="note">Hubo penaltis después; no cuentan para el signo</div></td>
+</tr><tr class="hit">
+<td>76</td><td>2026-06-29</td>
+<td>Ronda de 32</td>
+<td><strong>Brazil</strong><br>vs.<br>
+<strong>Japan</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td class="prob">1: 54.9%<br>
+X: 30.1%<br>2: 15.0%</td>
+<td class="score">2–1</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>77</td><td>2026-06-30</td>
+<td>Ronda de 32</td>
+<td><strong>France</strong><br>vs.<br>
+<strong>Sweden</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 30.8%<br>
+X: 37.5%<br>2: 31.7%</td>
+<td class="score">3–0</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>78</td><td>2026-06-30</td>
+<td>Ronda de 32</td>
+<td><strong>Ivory Coast</strong><br>vs.<br>
+<strong>Norway</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Norway</td>
+<td class="prob">1: 18.3%<br>
+X: 29.6%<br>2: 52.1%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Norway</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>79</td><td>2026-06-30</td>
+<td>Ronda de 32</td>
+<td><strong>Mexico</strong><br>vs.<br>
+<strong>Ecuador</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 35.0%<br>
+X: 40.3%<br>2: 24.7%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Mexico</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>80</td><td>2026-07-01</td>
+<td>Ronda de 32</td>
+<td><strong>DR Congo</strong><br>vs.<br>
+<strong>England</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana England</td>
+<td class="prob">1: 5.7%<br>
+X: 18.0%<br>2: 76.3%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana England</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>81</td><td>2026-07-01</td>
+<td>Ronda de 32</td>
+<td><strong>United States</strong><br>vs.<br>
+<strong>Bosnia &amp; Herzegovina</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 34.3%<br>
+X: 36.0%<br>2: 29.7%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana United States</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>82</td><td>2026-07-01</td>
+<td>Ronda de 32</td>
+<td><strong>Belgium</strong><br>vs.<br>
+<strong>Senegal</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 35.5%<br>
+X: 36.2%<br>2: 28.2%</td>
+<td class="score">2–2</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✓ Signo acertado</strong><div class="note">Hubo prórroga después; no cambia el signo a 90′</div></td>
+</tr><tr class="hit">
+<td>83</td><td>2026-07-02</td>
+<td>Ronda de 32</td>
+<td><strong>Croatia</strong><br>vs.<br>
+<strong>Portugal</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Portugal</td>
+<td class="prob">1: 21.9%<br>
+X: 33.1%<br>2: 44.9%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Portugal</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>84</td><td>2026-07-02</td>
+<td>Ronda de 32</td>
+<td><strong>Austria</strong><br>vs.<br>
+<strong>Spain</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana Spain</td>
+<td class="prob">1: 17.3%<br>
+X: 33.1%<br>2: 49.7%</td>
+<td class="score">0–3</td>
+<td><span class="sign">2</span><br>
+Gana Spain</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>85</td><td>2026-07-02</td>
+<td>Ronda de 32</td>
+<td><strong>Switzerland</strong><br>vs.<br>
+<strong>Algeria</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 34.9%<br>
+X: 37.2%<br>2: 27.9%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Switzerland</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>86</td><td>2026-07-03</td>
+<td>Ronda de 32</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Cape Verde</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td class="prob">1: 45.5%<br>
+X: 37.9%<br>2: 16.6%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong><div class="note">Hubo prórroga después; no cambia el signo a 90′</div></td>
+</tr><tr class="hit">
+<td>87</td><td>2026-07-03</td>
+<td>Ronda de 32</td>
+<td><strong>Colombia</strong><br>vs.<br>
+<strong>Ghana</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Colombia</td>
+<td class="prob">1: 38.3%<br>
+X: 35.6%<br>2: 26.1%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Colombia</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>88</td><td>2026-07-03</td>
+<td>Ronda de 32</td>
+<td><strong>Australia</strong><br>vs.<br>
+<strong>Egypt</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Egypt</td>
+<td class="prob">1: 26.4%<br>
+X: 34.8%<br>2: 38.8%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong><div class="note">Hubo penaltis después; no cuentan para el signo</div></td>
+</tr><tr class="miss">
+<td>89</td><td>2026-07-04</td>
+<td>Octavos</td>
+<td><strong>France</strong><br>vs.<br>
+<strong>Paraguay</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 39.8%<br>
+X: 40.2%<br>2: 19.9%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>90</td><td>2026-07-04</td>
+<td>Octavos</td>
+<td><strong>Canada</strong><br>vs.<br>
+<strong>Morocco</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 26.0%<br>
+X: 37.2%<br>2: 36.8%</td>
+<td class="score">0–3</td>
+<td><span class="sign">2</span><br>
+Gana Morocco</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>91</td><td>2026-07-05</td>
+<td>Octavos</td>
+<td><strong>Brazil</strong><br>vs.<br>
+<strong>Norway</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Brazil</td>
+<td class="prob">1: 48.0%<br>
+X: 32.2%<br>2: 19.8%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Norway</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>92</td><td>2026-07-05</td>
+<td>Octavos</td>
+<td><strong>Mexico</strong><br>vs.<br>
+<strong>England</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana England</td>
+<td class="prob">1: 20.6%<br>
+X: 38.0%<br>2: 41.4%</td>
+<td class="score">2–3</td>
+<td><span class="sign">2</span><br>
+Gana England</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="miss">
+<td>93</td><td>2026-07-06</td>
+<td>Octavos</td>
+<td><strong>Spain</strong><br>vs.<br>
+<strong>Portugal</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 30.6%<br>
+X: 37.5%<br>2: 31.9%</td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Spain</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="hit">
+<td>94</td><td>2026-07-06</td>
+<td>Octavos</td>
+<td><strong>United States</strong><br>vs.<br>
+<strong>Belgium</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Belgium</td>
+<td class="prob">1: 21.8%<br>
+X: 37.4%<br>2: 40.8%</td>
+<td class="score">1–4</td>
+<td><span class="sign">2</span><br>
+Gana Belgium</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>95</td><td>2026-07-07</td>
+<td>Octavos</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Egypt</strong></td>
+<td class="score">1–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td class="prob">1: 51.3%<br>
+X: 32.6%<br>2: 16.1%</td>
+<td class="score">3–2</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit exact">
+<td>96</td><td>2026-07-07</td>
+<td>Octavos</td>
+<td><strong>Switzerland</strong><br>vs.<br>
+<strong>Colombia</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 31.0%<br>
+X: 37.5%<br>2: 31.5%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>🎯 Signo y marcador exactos</strong><div class="note">Hubo penaltis después; no cuentan para el signo</div></td>
+</tr><tr class="hit">
+<td>97</td><td>2026-07-09</td>
+<td>Cuartos</td>
+<td><strong>France</strong><br>vs.<br>
+<strong>Morocco</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td class="prob">1: 38.9%<br>
+X: 38.4%<br>2: 22.7%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana France</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>98</td><td>2026-07-10</td>
+<td>Cuartos</td>
+<td><strong>Belgium</strong><br>vs.<br>
+<strong>Spain</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Spain</td>
+<td class="prob">1: 22.0%<br>
+X: 35.9%<br>2: 42.1%</td>
+<td class="score">1–2</td>
+<td><span class="sign">2</span><br>
+Gana Spain</td>
+<td><strong>✓ Signo acertado</strong></td>
+</tr><tr class="hit">
+<td>99</td><td>2026-07-11</td>
+<td>Cuartos</td>
+<td><strong>England</strong><br>vs.<br>
+<strong>Norway</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 35.6%<br>
+X: 35.7%<br>2: 28.7%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✓ Signo acertado</strong><div class="note">Hubo prórroga después; no cambia el signo a 90′</div></td>
+</tr><tr class="miss">
+<td>100</td><td>2026-07-11</td>
+<td>Cuartos</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Switzerland</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td class="prob">1: 37.5%<br>
+X: 35.7%<br>2: 26.8%</td>
+<td class="score">1–1</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado</strong><div class="note">Hubo prórroga después; no cambia el signo a 90′</div></td>
+</tr><tr class="miss">
+<td>101</td><td>2026-07-14</td>
+<td>Semifinal</td>
+<td><strong>Spain</strong><br>vs.<br>
+<strong>France</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana France</td>
+<td class="prob">1: 19.7%<br>
+X: 33.4%<br>2: 46.9%</td>
+<td class="score">2–0</td>
+<td><span class="sign">1</span><br>
+Gana Spain</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>102</td><td>2026-07-15</td>
+<td>Semifinal</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>England</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td class="prob">1: 27.2%<br>
+X: 37.1%<br>2: 35.7%</td>
+<td class="score">2–1</td>
+<td><span class="sign">1</span><br>
+Gana Argentina</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss">
+<td>103</td><td>2026-07-18</td>
+<td>Tercer puesto</td>
+<td><strong>England</strong><br>vs.<br>
+<strong>France</strong></td>
+<td class="score">0–1</td>
+<td><span class="sign">2</span><br>
+Gana France</td>
+<td class="prob">1: 19.6%<br>
+X: 32.9%<br>2: 47.5%</td>
+<td class="score">6–4</td>
+<td><span class="sign">1</span><br>
+Gana England</td>
+<td><strong>✕ Signo fallado</strong></td>
+</tr><tr class="miss exact-score">
+<td>104</td><td>2026-07-19</td>
+<td>Final</td>
+<td><strong>Argentina</strong><br>vs.<br>
+<strong>Spain</strong></td>
+<td class="score">0–0</td>
+<td><span class="sign">2</span><br>
+Gana Spain</td>
+<td class="prob">1: 27.1%<br>
+X: 34.8%<br>2: 38.1%</td>
+<td class="score">0–0</td>
+<td><span class="sign">X</span><br>
+Empate</td>
+<td><strong>✕ Signo fallado · marcador exacto</strong><div class="note">Hubo prórroga después; no cambia el signo a 90′</div></td>
+</tr></tbody></table></div>
+</main></body></html>

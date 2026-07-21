@@ -1,0 +1,9 @@
+rank,group,source,features,importance_log_loss,importance_std,positive_importance_percent,interpretation
+1,Experiencia,Resultados mundialistas,9,0.040349294555906655,0.008654232355241442,37.688496793485434,Ayuda fuera de muestra
+2,Contexto del partido,Resultados mundialistas,18,0.022622587530985692,0.013214218902534006,21.130761442199383,Ayuda fuera de muestra
+3,Forma y resultados,Resultados mundialistas,12,0.02190934816286707,0.0110636835259963,20.46455599959664,Ayuda fuera de muestra
+4,Goles recientes,Resultados mundialistas,6,0.011591167816628101,0.006313051479542484,10.82679873087867,Ayuda fuera de muestra
+5,Descanso,Resultados mundialistas,3,0.007645655705432119,0.0021928112239628177,7.141469849962714,Ayuda fuera de muestra
+6,Elo,Resultados mundialistas,7,0.00277983984443293,0.0026078511168186307,2.5965258182680357,Ayuda fuera de muestra
+7,Ranking FIFA,Dato-Futbol / FIFA,11,0.0001620795554053256,0.0003900382825263009,0.15139136560911554,Ayuda fuera de muestra
+8,Enfrentamientos directos,Resultados mundialistas,2,-0.0022416458375303927,0.0018239179250828432,0.0,Sin aporte estable detectado

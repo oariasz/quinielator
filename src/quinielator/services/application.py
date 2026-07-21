@@ -16,8 +16,14 @@ from quinielator.data import (
     WorldCupResultsSource,
 )
 from quinielator.data.normalizer import TeamNameNormalizer
+from quinielator.domain import MatchSign
+from quinielator.evaluation.feature_importance import (
+    FeatureImportanceAnalyzer,
+    FeatureImportanceReport,
+)
 from quinielator.evaluation.reporting import ReportGenerator
 from quinielator.evaluation.walk_forward import WorldCupEvaluator
+from quinielator.evaluation.world_cup_report import WorldCupVisualReport
 from quinielator.features import TemporalDatasetBuilder
 from quinielator.training import ModelTrainer
 
@@ -199,6 +205,7 @@ class QuinielatorApplication:
         cache_is_compatible = mode in (None, self.config.training.evaluation_mode)
         if prediction_path.exists() and metrics_path.exists() and cache_is_compatible:
             predictions = pd.read_csv(prediction_path)
+            predictions = self._ensure_sign_columns(predictions)
             metrics = pd.read_csv(metrics_path)
             if start_year is not None:
                 predictions = predictions[predictions["tournament_year"].ge(start_year)]
@@ -214,6 +221,89 @@ class QuinielatorApplication:
             end_year=end_year,
             mode=mode,
         )
+
+    @staticmethod
+    def _ensure_sign_columns(predictions: pd.DataFrame) -> pd.DataFrame:
+        """Actualiza reportes cacheados creados antes de introducir 1/X/2."""
+
+        frame = predictions.copy()
+        frame["predicted_sign"] = frame["predicted_outcome"].map(
+            lambda value: MatchSign.from_outcome(str(value)).value
+        )
+        frame["actual_sign"] = frame["actual_outcome"].map(
+            lambda value: MatchSign.from_outcome(str(value)).value
+        )
+        frame["sign_correct"] = frame["predicted_sign"].eq(frame["actual_sign"]).astype(int)
+        return frame
+
+    def generate_world_cup_report(
+        self,
+        *,
+        model_name: str,
+        year: int,
+        publish_docs: bool = False,
+    ) -> list[Path]:
+        """Genera la tabla completa 1/X/2 de una edición y, opcionalmente, la documenta."""
+
+        predictions, _ = self.load_or_evaluate_predictions(
+            model_name=model_name,
+            start_year=year,
+            end_year=year,
+        )
+        writer = WorldCupVisualReport()
+        report = writer.write(
+            predictions,
+            year=year,
+            model_name=model_name,
+            output_directory=self.config.paths.reports / f"mundial-{year}",
+        )
+        paths = [report.csv, report.markdown, report.html, report.svg]
+        if publish_docs:
+            documented = writer.write(
+                predictions,
+                year=year,
+                model_name=model_name,
+                output_directory=self.config.paths.root / "docs" / f"resultados-{year}",
+            )
+            paths.extend([documented.csv, documented.markdown, documented.html, documented.svg])
+        return paths
+
+    def analyze_features(
+        self,
+        *,
+        model_name: str,
+        year: int,
+        repeats: int = 3,
+        publish_docs: bool = False,
+    ) -> list[Path]:
+        """Explica el modelo con permutaciones fuera de muestra para una edición."""
+
+        result = FeatureImportanceAnalyzer(self.config).analyze(
+            self.load_dataset(),
+            model_name=model_name,
+            tournament_year=year,
+            repeats=repeats,
+        )
+        writer = FeatureImportanceReport()
+        report = writer.write(
+            result,
+            self.config.paths.reports / f"feature-analysis-{year}",
+        )
+        paths = [report.features_csv, report.groups_csv, report.markdown, report.svg]
+        if publish_docs:
+            documented = writer.write(
+                result,
+                self.config.paths.root / "docs" / f"resultados-{year}",
+            )
+            paths.extend(
+                [
+                    documented.features_csv,
+                    documented.groups_csv,
+                    documented.markdown,
+                    documented.svg,
+                ]
+            )
+        return paths
 
     def regenerate_report(self, model_name: str) -> tuple[Path, Path]:
         prediction_path = self.config.paths.reports / f"predictions_{model_name}.csv"

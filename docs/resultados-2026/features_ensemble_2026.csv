@@ -1,0 +1,69 @@
+rank,feature,group,source,importance_log_loss,importance_std,positive_importance_percent,interpretation
+1,away_confederation_uefa,Contexto del partido,Resultados mundialistas,0.009327246997642513,0.004611248274729273,9.171263247769328,Ayuda fuera de muestra
+2,away_matches,Experiencia,Resultados mundialistas,0.007377468018613609,0.0032453752850144816,7.254091300231035,Ayuda fuera de muestra
+3,home_is_host,Contexto del partido,Resultados mundialistas,0.00733533409451752,0.006886187231992574,7.212662000712708,Ayuda fuera de muestra
+4,away_confederation_concacaf,Contexto del partido,Resultados mundialistas,0.006967272456699725,0.0034945676421684305,6.850755623334118,Ayuda fuera de muestra
+5,away_confederation_afc,Contexto del partido,Resultados mundialistas,0.0062079390875402485,0.0018018236551122656,6.104120927894257,Ayuda fuera de muestra
+6,away_knockout_experience,Experiencia,Resultados mundialistas,0.005740334156015469,0.0030153451601587066,5.644335964115252,Ayuda fuera de muestra
+7,difference_win_rate,Forma y resultados,Resultados mundialistas,0.005228940759366907,0.0014226668708520274,5.141494829424563,Ayuda fuera de muestra
+8,home_win_rate,Forma y resultados,Resultados mundialistas,0.004165654059806778,0.0017398929093054225,4.095989951942223,Ayuda fuera de muestra
+9,difference_matches,Experiencia,Resultados mundialistas,0.003974818733243568,0.00354886063963193,3.9083460504429284,Ayuda fuera de muestra
+10,difference_loss_rate,Forma y resultados,Resultados mundialistas,0.003907886206914313,0.0016979989224137153,3.8425328668787966,Ayuda fuera de muestra
+11,home_rest_days,Descanso,Resultados mundialistas,0.003747436100169921,0.0013065686911862338,3.684766039490453,Ayuda fuera de muestra
+12,difference_knockout_experience,Experiencia,Resultados mundialistas,0.003700326496374684,0.002084824538856771,3.638444270804212,Ayuda fuera de muestra
+13,home_confederation_afc,Contexto del partido,Resultados mundialistas,0.0029952452807140207,0.00675296123733519,2.945154445680509,Ayuda fuera de muestra
+14,away_recent_goals_for,Goles recientes,Resultados mundialistas,0.0022391557617878364,0.0012514168770817312,2.2017093521063846,Ayuda fuera de muestra
+15,away_loss_rate,Forma y resultados,Resultados mundialistas,0.0021083393716464283,0.0014894681448793974,2.0730806633397005,Ayuda fuera de muestra
+16,home_confederation_conmebol,Contexto del partido,Resultados mundialistas,0.0020951232087104365,0.004090896962527869,2.060085520245277,Ayuda fuera de muestra
+17,difference_recent_goals_against,Goles recientes,Resultados mundialistas,0.0020499110213795914,0.0015891526018599928,2.015629436673839,Ayuda fuera de muestra
+18,away_elo,Elo,Resultados mundialistas,0.0018295899189870735,0.001100433094993455,1.798992863246413,Ayuda fuera de muestra
+19,home_draw_rate,Forma y resultados,Resultados mundialistas,0.0017908359524172023,0.0041728083615954455,1.7608869967032224,Ayuda fuera de muestra
+20,away_recent_form,Forma y resultados,Resultados mundialistas,0.0017417833375419356,0.0017677276682035827,1.712654710785821,Ayuda fuera de muestra
+21,away_recent_opponent_elo,Elo,Resultados mundialistas,0.0016843313952653372,0.0015319139799834889,1.6561635631998817,Ayuda fuera de muestra
+22,difference_draw_rate,Forma y resultados,Resultados mundialistas,0.001582798634863636,0.0005306190120665228,1.556328780851773,Ayuda fuera de muestra
+23,difference_rest_days,Descanso,Resultados mundialistas,0.0015786028061275826,0.002274135472816067,1.552203120848277,Ayuda fuera de muestra
+24,away_draw_rate,Forma y resultados,Resultados mundialistas,0.00146834706196608,0.0011465136585127572,1.4437912331241258,Ayuda fuera de muestra
+25,difference_recent_opponent_elo,Elo,Resultados mundialistas,0.0014357534368413028,0.0003187844452519145,1.4117426858631823,Ayuda fuera de muestra
+26,home_loss_rate,Forma y resultados,Resultados mundialistas,0.0013193124249683663,0.0010302067403540258,1.2972489694436156,Ayuda fuera de muestra
+27,away_recent_goals_against,Goles recientes,Resultados mundialistas,0.001050189298491322,0.0005470503818233659,1.0326265101469403,Ayuda fuera de muestra
+28,elo_expected_home,Elo,Resultados mundialistas,0.0010208420709711507,0.0008580679767296993,1.0037700695222094,Ayuda fuera de muestra
+29,away_confederation_conmebol,Contexto del partido,Resultados mundialistas,0.0010016192034312255,0.0006218738460695578,0.9848686746486509,Ayuda fuera de muestra
+30,away_confederation_ofc,Contexto del partido,Resultados mundialistas,0.0009136513342190344,0.0006266753499292937,0.8983719317089323,Ayuda fuera de muestra
+31,away_fifa_age_days,Ranking FIFA,Dato-Futbol / FIFA,0.0008632652975013588,0.00027246794952467653,0.8488285233627855,Ayuda fuera de muestra
+32,home_matches,Experiencia,Resultados mundialistas,0.0007823404822574265,0.001325904722762332,0.7692570502296318,Ayuda fuera de muestra
+33,same_confederation,Contexto del partido,Resultados mundialistas,0.0006472981842643666,0.00022074274995289854,0.6364731253704423,Ayuda fuera de muestra
+34,difference_recent_goals_for,Goles recientes,Resultados mundialistas,0.0005620102556583185,0.0018324733666575796,0.5526115051838292,Ayuda fuera de muestra
+35,difference_recent_form,Forma y resultados,Resultados mundialistas,0.0005039743058678159,0.00048050244743971007,0.49554611670451126,Ayuda fuera de muestra
+36,away_rest_days,Descanso,Resultados mundialistas,0.0004391574386749308,0.0007784680226042941,0.4318132111567219,Ayuda fuera de muestra
+37,home_knockout_experience,Experiencia,Resultados mundialistas,0.00024609208899173396,0.0002771739986373953,0.24197658021784196,Ayuda fuera de muestra
+38,home_confederation_caf,Contexto del partido,Resultados mundialistas,7.056131523091036e-05,0.0054367509232040685,0.06938128659561389,Ayuda fuera de muestra
+39,away_fifa_available,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+40,away_fifa_rank,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+41,away_fifa_stale,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+42,away_is_host,Contexto del partido,Resultados mundialistas,0.0,0.0,0.0,Sin aporte estable detectado
+43,difference_current_tournament_matches,Experiencia,Resultados mundialistas,0.0,0.0,0.0,Sin aporte estable detectado
+44,fifa_points_relative_difference,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+45,fifa_rank_difference,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+46,fifa_ranking_available,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+47,home_confederation_ofc,Contexto del partido,Resultados mundialistas,0.0,0.0,0.0,Sin aporte estable detectado
+48,home_fifa_available,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+49,home_fifa_rank,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+50,home_fifa_stale,Ranking FIFA,Dato-Futbol / FIFA,0.0,0.0,0.0,Sin aporte estable detectado
+51,tournament_year_scaled,Contexto del partido,Resultados mundialistas,0.0,0.0,0.0,Sin aporte estable detectado
+52,away_confederation_caf,Contexto del partido,Resultados mundialistas,-4.8617200531131385e-05,0.0007013087193166863,0.0,Sin aporte estable detectado
+53,away_win_rate,Forma y resultados,Resultados mundialistas,-0.00013160793276902893,0.00012039727658817758,0.0,Sin aporte estable detectado
+54,home_recent_goals_for,Goles recientes,Resultados mundialistas,-0.0001663983553414905,0.000356002122795899,0.0,Sin aporte estable detectado
+55,elo_difference,Elo,Resultados mundialistas,-0.0002624989809209666,0.00027081705799795,0.0,Sin aporte estable detectado
+56,home_confederation_uefa,Contexto del partido,Resultados mundialistas,-0.0003398683525647872,0.0012902800832720288,0.0,Sin aporte estable detectado
+57,h2h_home_points,Enfrentamientos directos,Resultados mundialistas,-0.0004302990769376347,0.0003827276730393254,0.0,Sin aporte estable detectado
+58,stage_code,Contexto del partido,Resultados mundialistas,-0.000571683060641881,0.0014905729046848764,0.0,Sin aporte estable detectado
+59,home_fifa_age_days,Ranking FIFA,Dato-Futbol / FIFA,-0.0006052148864278628,0.00033150744865542475,0.0,Sin aporte estable detectado
+60,home_recent_goals_against,Goles recientes,Resultados mundialistas,-0.0009121190980394545,0.003454437856603394,0.0,Sin aporte estable detectado
+61,knockout_stage,Contexto del partido,Resultados mundialistas,-0.0009633773237044619,0.0017043127927892949,0.0,Sin aporte estable detectado
+62,away_current_tournament_matches,Experiencia,Resultados mundialistas,-0.0009810577405311883,0.0005343914311104856,0.0,Sin aporte estable detectado
+63,home_recent_opponent_elo,Elo,Resultados mundialistas,-0.0010154722630919988,0.0005884143508747506,0.0,Sin aporte estable detectado
+64,h2h_matches,Enfrentamientos directos,Resultados mundialistas,-0.0011447908380059157,0.0013723773289793261,0.0,Sin aporte estable detectado
+65,home_current_tournament_matches,Experiencia,Resultados mundialistas,-0.0014157643171004875,0.0009033398264663692,0.0,Sin aporte estable detectado
+66,home_recent_form,Forma y resultados,Resultados mundialistas,-0.0020876427428594634,0.0016946849299498846,0.0,Sin aporte estable detectado
+67,home_elo,Elo,Resultados mundialistas,-0.002173012765708293,0.0009104303904333431,0.0,Sin aporte estable detectado
+68,home_confederation_concacaf,Contexto del partido,Resultados mundialistas,-0.002942426500169204,0.007217376576777589,0.0,Sin aporte estable detectado
